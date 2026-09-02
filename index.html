@@ -1,0 +1,265 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>DAI AI 헬스케어 플랫폼 팀장 지원 · 정치성 — 임원 면접 PT</title>
+<meta name="description" content="의료·환자·보험을 잇는 헬스케어 플랫폼을 대규모 UX 조직으로 시장에 배포해 온 16년차 실전 기획 리더">
+<style>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css');
+:root{
+  --bg:#ffffff; --ink:#232528; --gray:#8b9096; --gray2:#a6abb2; --body:#4a4f56;
+  --red:#e12e2e; --red-soft:#fbecec; --charcoal:#3a3d41; --charcoal2:#2d2f33;
+  --thead:#e9edf9; --tline:#dbe1f0; --blue:#2f66e6; --swoosh:#eef1f6;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:#0c0d0f;overflow:hidden;
+  font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo",sans-serif;
+  -webkit-font-smoothing:antialiased}
+#fit{position:fixed;top:50%;left:50%;transform-origin:center center}
+#deck{width:1280px;height:720px;position:relative;background:var(--bg);overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.5)}
+.slide{position:absolute;inset:0;padding:96px 72px 60px;display:none;flex-direction:column;justify-content:center}
+.slide.on{display:flex}
+.hd{position:absolute;top:36px;left:72px;right:72px;display:flex;justify-content:space-between;align-items:baseline;z-index:3}
+.hd .sec{font-size:20px;font-weight:700;color:var(--ink)}
+.hd .pg{font-size:20px;font-weight:600;color:var(--gray2)}
+.tw{text-align:center;flex:none}
+.eyebrow{font-size:23px;font-weight:600;color:var(--gray);margin-bottom:16px}
+.headline{font-size:44px;font-weight:800;color:var(--ink);line-height:1.28;letter-spacing:-.01em;text-wrap:balance}
+.red{color:var(--red)}
+.desc{font-size:24px;color:var(--body);text-align:center;margin-top:18px;line-height:1.6}
+.body{margin-top:40px;flex:none}
+/* 강조바 */
+.paybar{display:flex;align-items:center;gap:16px;background:var(--red-soft);border-left:5px solid var(--red);
+  border-radius:10px;padding:18px 26px;margin:0 auto;max-width:1040px}
+.paybar .tag{flex:none;background:var(--red);color:#fff;font-size:15px;font-weight:800;border-radius:7px;padding:7px 13px}
+.paybar .t{font-size:24px;color:var(--ink);font-weight:600;line-height:1.45}
+.paybar .t b{color:var(--red);font-weight:800}
+/* 3축 에디토리얼 (카드 스택 지양) */
+.axis{display:flex;justify-content:center;gap:0;margin:0 auto;max-width:1140px}
+.axis .a{flex:1;padding:8px 30px;text-align:center;position:relative}
+.axis .a + .a::before{content:"";position:absolute;left:0;top:12%;height:76%;width:1px;background:var(--tline)}
+.axis .num{font-size:30px;font-weight:900;color:var(--red);line-height:1}
+.axis .lb{font-size:26px;font-weight:800;color:var(--ink);margin-top:14px;line-height:1.32}
+.axis .sb{font-size:19px;font-weight:500;color:var(--gray);margin-top:10px;line-height:1.5}
+/* 레퍼런스 3열 (성과 중심·큰 수치) */
+.refs{display:flex;justify-content:center;gap:0;margin:0 auto;max-width:1160px}
+.refs .r{flex:1;padding:6px 28px;text-align:center;position:relative}
+.refs .r + .r::before{content:"";position:absolute;left:0;top:6%;height:88%;width:1px;background:var(--tline)}
+.refs .chip{display:inline-block;background:var(--charcoal);color:#fff;font-size:16px;font-weight:800;border-radius:999px;padding:7px 18px;letter-spacing:-.01em}
+.refs .d{font-size:19px;color:var(--body);font-weight:500;line-height:1.5;margin-top:16px;min-height:112px}
+.refs .stat{font-size:56px;font-weight:900;color:var(--red);line-height:1;letter-spacing:-.02em}
+.refs .stat small{display:block;font-size:18px;font-weight:700;color:var(--ink);margin-top:9px;letter-spacing:0}
+.refs .qual{font-size:22px;font-weight:800;color:var(--ink);line-height:1.35}
+.refs .qual em{color:var(--red);font-style:normal}
+/* 흐름 노드 */
+.flow{display:flex;align-items:stretch;justify-content:center;gap:14px;flex-wrap:nowrap;margin:0 auto}
+.node{background:#f3f4f6;border:1px solid #e3e5e8;color:var(--ink);border-radius:14px;padding:18px 20px;text-align:center;display:flex;flex-direction:column;justify-content:center;min-width:0;flex:1}
+.node .nt{font-size:21px;font-weight:800;line-height:1.28}
+.node .ns{font-size:16px;font-weight:500;color:var(--gray);margin-top:7px;line-height:1.4}
+.node.bridge{background:#fff;border:2px solid var(--red)}
+.node.bridge .nt{color:var(--red)}
+.node.dark{background:var(--charcoal2);border-color:var(--charcoal2)}
+.node.dark .nt{color:#fff}.node.dark .ns{color:#c3c7cc}
+.arw{align-self:center;color:#c2c5c9;font-size:30px;font-weight:900;flex:none}
+/* 다크박스 */
+.darkbox{background:var(--charcoal2);color:#eef0f2;border-radius:14px;padding:22px 30px;font-size:24px;line-height:1.55;text-align:center;max-width:1080px;margin:0 auto;font-weight:600}
+.darkbox b{color:#ff8a8a;font-weight:800}
+/* 타이밍 알약 행 */
+.pills{display:flex;justify-content:center;gap:16px;margin:0 auto;flex-wrap:wrap}
+.pill{background:var(--red-soft);border:1px solid #f3cccc;border-radius:999px;padding:12px 24px;text-align:center}
+.pill .pt{font-size:21px;font-weight:800;color:var(--ink)}
+.pill .pd{font-size:17px;font-weight:700;color:var(--red);margin-top:3px}
+/* 90일 스트립 */
+.strip{display:flex;align-items:center;justify-content:center;gap:12px;margin:0 auto}
+.step{background:#f3f4f6;border-radius:10px;padding:12px 20px;font-size:20px;font-weight:800;color:var(--ink)}
+.strip .arw{font-size:24px}
+/* 2열 클로징 */
+.two{display:flex;gap:0;justify-content:center;margin:0 auto;max-width:1140px}
+.two .c{flex:1;padding:4px 40px;position:relative}
+.two .c + .c::before{content:"";position:absolute;left:0;top:4%;height:92%;width:1px;background:var(--tline)}
+.two .ct{font-size:23px;font-weight:800;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.two .ct .dot{width:9px;height:9px;border-radius:50%;background:var(--red);flex:none}
+.two .cb{font-size:20px;font-weight:500;color:var(--body);line-height:1.58}
+.two .cb b{color:var(--ink);font-weight:800}
+/* 표지 */
+.cover{justify-content:center;padding:80px 96px}
+.swoosh{position:absolute;right:-190px;bottom:-250px;width:880px;height:880px;border-radius:50%;background:var(--swoosh);z-index:0}
+.swoosh:after{content:"";position:absolute;right:160px;bottom:160px;width:660px;height:660px;border-radius:50%;background:#fff}
+.cover .b{position:relative;z-index:1;max-width:1000px}
+.cover .k1{font-size:24px;font-weight:700;color:var(--red);letter-spacing:.02em}
+.cover .k2{font-size:46px;font-weight:900;color:var(--ink);letter-spacing:-.02em;line-height:1.3;margin:18px 0 26px}
+.cover .who{font-size:24px;color:var(--body);font-weight:600}
+.cover .who b{color:var(--ink);font-weight:800}
+.cover .date{font-size:20px;color:var(--gray);margin-top:14px}
+.logo{font-weight:900;color:var(--blue)}
+/* 클로징 하단 배너 */
+.identband{background:var(--charcoal2);color:#fff;border-radius:16px;padding:26px 34px;text-align:center;max-width:1120px;margin:0 auto}
+.identband .il{font-size:25px;font-weight:800;line-height:1.42}
+.identband .il em{color:#ff8a8a;font-style:normal}
+.identband .sign{font-size:19px;color:#c3c7cc;font-weight:600;margin-top:14px}
+#bar{position:fixed;top:0;left:0;height:4px;background:var(--red);z-index:20;transition:width .25s}
+</style>
+<div id="fit"><div id="deck">
+
+<!-- ▼ 표지 -->
+<section class="slide on cover">
+  <div class="swoosh"></div>
+  <div class="hd"><span class="sec" style="letter-spacing:.04em">임원 면접 PT</span><span class="pg" style="font-weight:800;color:var(--ink)">동아쏘시오그룹 · <span class="logo">DAI</span></span></div>
+  <div class="b">
+    <div class="k1">AI 헬스케어 플랫폼 팀장 지원</div>
+    <div class="k2">의료·환자·보험을 잇는 헬스케어 플랫폼을,<br><span class="red">대규모 UX 조직</span>으로 <span class="red">시장에 배포</span>해 온<br><span class="red">16년차</span> 실전 기획 리더</div>
+    <div class="who">발표자 · <b>정치성</b> &nbsp;|&nbsp; DAI AI 헬스케어 플랫폼 팀장 지원</div>
+    <div class="date">2026. 09. 16</div>
+  </div>
+</section>
+
+<!-- ▼ [1] 핵심 정체성 -->
+<section class="slide">
+  <div class="hd"><span class="sec">핵심 정체성 · Who I am</span><span class="pg">01</span></div>
+  <div class="tw">
+    <div class="eyebrow">한 줄 정의</div>
+    <div class="headline">AI를 ‘연구’에 머물게 두지 않고,<br>사용자가 신뢰하고 병원이 쓰는 헬스케어 <span class="red">‘프로덕트’로 상용화</span>하는 실전 기획 리더</div>
+  </div>
+  <div class="body">
+    <div class="axis" style="margin-bottom:34px">
+      <div class="a"><div class="num">①</div><div class="lb">규제 도메인<br>유관 약 8년</div><div class="sb">의료·보험·복지 규제 환경에서<br>제품을 만들어 온 경험</div></div>
+      <div class="a"><div class="num">②</div><div class="lb">플랫폼 0→1<br>부터 운영까지</div><div class="sb">기획 착수부터 상용 운영까지<br>총괄한 PM</div></div>
+      <div class="a"><div class="num">③</div><div class="lb">AI로 직접<br>만드는 실행력</div><div class="sb">사내 자동화 3종을<br>외주 없이 자체 구현</div></div>
+    </div>
+    <div class="paybar"><span class="tag">오너십</span><span class="t">제 성과는 산출물 개수가 아니라 <b>전환율 · 이용률 · 매출</b>로 증명됩니다.</span></div>
+  </div>
+</section>
+
+<!-- ▼ [2] 8년 헬스케어 도메인 레퍼런스 -->
+<section class="slide">
+  <div class="hd"><span class="sec">헬스케어 도메인 · 성과 레퍼런스</span><span class="pg">02</span></div>
+  <div class="tw">
+    <div class="eyebrow">약 8년, 의료·복지·보험을 관통한 성과</div>
+    <div class="headline">규제가 복잡할수록 강한 사람 —<br>화면 너머 <span class="red">정책·정산·외부연동</span>을 엮어 <span class="red">매출</span>로 연결</div>
+  </div>
+  <div class="body">
+    <div class="refs" style="margin-bottom:30px">
+      <div class="r">
+        <span class="chip">내손안에키오스크 · 더베스트페이</span>
+        <div class="d">병원 원무를 모바일로 — 예약·도착확인·자동결제·실손청구·약국 처방 연계를 <b>단일 동선</b>으로 고도화</div>
+        <div class="qual">EMR·보험사·약국·결제사<br><em>다자 정산 구조 직접 조율</em></div>
+      </div>
+      <div class="r">
+        <span class="chip">이로움케어 / 이로움돌봄 · THK</span>
+        <div class="d">노인장기요양 수급자·보호자 데이터를 연동한 <b>B2B2C 헬스케어 플랫폼</b></div>
+        <div class="stat">약 30%<small>수급자조회 이용률 · 직배 수기대응 건당 약 2시간 절감</small></div>
+      </div>
+      <div class="r">
+        <span class="chip">굿리치 · 보험 마이데이터</span>
+        <div class="d">보험업계 최초 마이데이터 개념 앱 <b>0→1</b>, 개인정보보호법·신용정보법 컴플라이언스 준수</div>
+        <div class="stat">약 200만<small>재직 시점 누적 가입 · DB 전환율 약 20% 향상</small></div>
+      </div>
+    </div>
+    <div class="darkbox">DAI가 만들 헬스케어 플랫폼과 <b>사용자·데이터·규제가 그대로 이어지는</b> 도메인 경험입니다.</div>
+  </div>
+</section>
+
+<!-- ▼ [3] 조직 리딩 + 테크 조율 + AI 실행력 -->
+<section class="slide">
+  <div class="hd"><span class="sec">조직 리딩 · 테크 조율 · AI 실행력</span><span class="pg">03</span></div>
+  <div class="tw">
+    <div class="eyebrow">대규모 조직을 이끌고, 직접 만들어 본 리더</div>
+    <div class="headline">판단만 하는 기획자가 아니라, <span class="red">AI로 직접 만들어 보는</span> 리더</div>
+  </div>
+  <div class="body">
+    <div class="refs" style="margin-bottom:30px">
+      <div class="r">
+        <span class="chip">대규모 조직 리딩</span>
+        <div class="d">코나아이 플랫폼UX그룹장 — 지역화폐 30여 지자체·동백택시 등 대형 연동 프로젝트 <b>납기 통제·수주</b></div>
+        <div class="stat">약 20명<small>포토샵 6명 체제 → 피그마 전환, 3명이 더 많은 물량 소화</small></div>
+      </div>
+      <div class="r">
+        <span class="chip">테크·이해관계자 조율</span>
+        <div class="d">내부 개발조직 + 외부 벤더 + 현업 + 법무·보안을 <b>동시에 끌고 가는</b> 총괄 PM의 조율력</div>
+        <div class="qual"><em>정책이 다른 다자 주체를</em><br>하나의 제품으로 정렬</div>
+      </div>
+      <div class="r">
+        <span class="chip">AI 실무 적용력</span>
+        <div class="d">AI 모델러가 아님에도 AI 코딩 툴로 사내 자동화 시스템을 <b>외주 없이 직접 빌딩</b></div>
+        <div class="stat">3종<small>기획 판단 + 직접 구현을 겸비한 실행형 리더</small></div>
+      </div>
+    </div>
+    <div class="paybar"><span class="tag">차별점</span><span class="t">개발조직·벤더·현업·법무를 붙여 본 조율력에, <b>AI로 직접 만드는 실행력</b>을 더합니다.</span></div>
+  </div>
+</section>
+
+<!-- ▼ [4] DAI 기여 로드맵 (승부처) -->
+<section class="slide">
+  <div class="hd"><span class="sec">DAI 입사 후 플랫폼 기여 로드맵</span><span class="pg">04</span></div>
+  <div class="tw">
+    <div class="eyebrow">운영사 → 플랫폼 구축사, 그 다음 축</div>
+    <div class="headline">다음 축은 <span class="red">AI 헬스케어 플랫폼</span> —<br>병원·처방 접점을 가진 제약사만이 지금 선점할 수 있습니다</div>
+  </div>
+  <div class="body" style="margin-top:28px">
+    <div class="darkbox" style="font-size:22px;padding:18px 28px;margin-bottom:22px">DAI는 이미 <b>AIDDP(AI 신약개발 플랫폼)</b>로 ‘운영사 → 플랫폼 구축사’ 전환에 성공했습니다.</div>
+    <div class="flow" style="margin-bottom:22px">
+      <div class="node"><div class="nt">그룹의 산재한 자산</div><div class="ns">제약·병원 네트워크·처방 접점 / 하이카디·닥터눈·CGM / 에스티팜 원료</div></div>
+      <div class="arw">→</div>
+      <div class="node bridge"><div class="nt">비즈니스 번역·정렬</div><div class="ns">AI 연구진·개발자·제약 인력 사이를 잇는 브릿지 &mdash; <b>제 역할</b></div></div>
+      <div class="arw">→</div>
+      <div class="node dark"><div class="nt">환자·의료기관 중심<br>모바일 헬스케어 플랫폼</div><div class="ns">채택·리텐션으로 측정, 매출로 연결</div></div>
+    </div>
+    <div class="pills" style="margin-bottom:20px">
+      <div class="pill"><div class="pt">비대면진료 법제화</div><div class="pd">2026.12 시행</div></div>
+      <div class="pill"><div class="pt">의료 마이데이터</div><div class="pd">건강정보 고속도로</div></div>
+      <div class="pill"><div class="pt">디지털의료제품법</div><div class="pd">2025</div></div>
+      <div class="pill" style="background:#f3f4f6;border-color:#e3e5e8"><div class="pt" style="color:var(--body)">매출 관점</div><div class="pd" style="color:var(--ink)">내부 효율화·결합 → 외부 확장 스케일</div></div>
+    </div>
+    <div class="strip">
+      <div class="step" style="background:var(--red-soft);color:var(--red);white-space:nowrap">첫 90일</div>
+      <span class="arw">·</span>
+      <div class="step" style="white-space:nowrap">진단 (여정·데이터·규제)</div><span class="arw">→</span>
+      <div class="step" style="white-space:nowrap">우선순위</div><span class="arw">→</span>
+      <div class="step" style="white-space:nowrap">검증</div>
+      <span class="arw">·</span>
+      <div class="step" style="background:#fff;border:2px solid var(--red);color:var(--ink)">첫 가설 &mdash; 병원 원무 접점을 복약·만성질환 관리로 연결</div>
+    </div>
+  </div>
+</section>
+
+<!-- ▼ [5] 왜 저인가 + 정직한 경계 + 클로징 -->
+<section class="slide">
+  <div class="hd"><span class="sec">왜 저인가 · 정직한 경계</span><span class="pg">05</span></div>
+  <div class="tw">
+    <div class="eyebrow">겸비, 그리고 정직</div>
+    <div class="headline">이종 시스템 연동 · 복잡 규제 ·<br>대규모 조직 · AX 직접구현을 <span class="red">한 사람이 겸비</span></div>
+  </div>
+  <div class="body" style="margin-top:34px">
+    <div class="two" style="margin-bottom:34px">
+      <div class="c">
+        <div class="ct"><span class="dot"></span>정직한 경계</div>
+        <div class="cb"><b>SaMD 인허가나 AI 모델 개발</b>을 제 손으로 한 적은 없습니다. 그건 데이터사이언스·의료진·전문 파트너의 영역입니다. 제 역할은 <b>규제까지 포함해 플랫폼을 총괄하는 오너</b> — 규제는 법무·외부전문가와 거버넌스로 닫습니다.</div>
+      </div>
+      <div class="c">
+        <div class="ct"><span class="dot"></span>오래 갈 이유</div>
+        <div class="cb">제 커리어가 <b>결제·복지·보험을 지나 헬스케어로 수렴</b>했습니다. 그룹의 신성장 플랫폼은 <b>수년짜리 과제</b>라, 제 궤적과 정확히 맞습니다.</div>
+      </div>
+    </div>
+    <div class="identband">
+      <div class="il">의료·환자·보험을 잇는 헬스케어 플랫폼을, <em>대규모 UX 조직</em>으로 <em>시장에 배포</em>해 온 <em>16년차</em> 실전 기획 리더.</div>
+      <div class="sign">DAI AI 헬스케어 플랫폼 팀장 지원 · 정치성</div>
+    </div>
+  </div>
+</section>
+
+</div></div>
+<div id="bar"></div>
+<script>
+const slides=[...document.querySelectorAll('.slide')];let i=0;
+const fit=document.getElementById('fit');
+function scale(){const s=Math.min(innerWidth/1280,innerHeight/720);fit.style.transform=`translate(-50%,-50%) scale(${s})`;}
+function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,k)=>s.classList.toggle('on',k===i));
+  document.getElementById('bar').style.width=((i+1)/slides.length*100)+'%';}
+addEventListener('keydown',e=>{
+  if(['ArrowRight',' ','PageDown'].includes(e.key)){show(i+1);e.preventDefault();}
+  else if(['ArrowLeft','PageUp'].includes(e.key)){show(i-1);e.preventDefault();}
+  else if(e.key==='f'||e.key==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();}});
+addEventListener('click',e=>{if(e.target.closest('a'))return;show(i+(e.clientX>innerWidth/2?1:-1));});
+let x0=null;addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+addEventListener('touchend',e=>{if(x0==null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50)show(i+(dx<0?1:-1));x0=null;});
+addEventListener('resize',scale);scale();show(0);
+</script>
