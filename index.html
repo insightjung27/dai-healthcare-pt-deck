@@ -6,299 +6,361 @@
 <style>
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css');
 :root{
-  --bg:#ffffff; --ink:#272b4d; --gray:#6b7089; --gray2:#9498b4; --body:#575d70;
-  --navy:#272b4d; --navy2:#2f3557;
-  --cyan:#25bbe8; --cyan2:#4cc6ec; --teal:#1f78a1; --cyan-soft:#e7f5fb;
-  --thead:#e8eef6; --tline:#dfe3ea; --logo:#1f78a1; --swoosh:#eef2f6;
+  --bg:#ffffff; --ink:#232640; --gray:#6b7089; --gray2:#9498b4; --body:#565c72;
+  --navy:#20233d; --navy2:#2b2f4e; --navyd:#181a30;
+  --cyan:#25bbe8; --cyan2:#54cbef; --teal:#1f7ea6;
+  --cyan-soft:#eaf6fc; --line:#e2e6ef; --thead:#eef1f8;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%;background:#0c0d0f;overflow:hidden;
+html,body{height:100%;background:#0a0b12;overflow:hidden;
   font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
-  -webkit-font-smoothing:antialiased}
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 #fit{position:fixed;top:50%;left:50%;transform-origin:center center}
 #deck{width:1280px;height:720px;position:relative;background:var(--bg);overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.5)}
-.slide{position:absolute;inset:0;padding:92px 72px 56px;display:none;flex-direction:column;justify-content:center}
+.slide{position:absolute;inset:0;display:none;flex-direction:column}
 .slide.on{display:flex}
-.hd{position:absolute;top:36px;left:72px;right:72px;display:flex;justify-content:space-between;align-items:baseline;z-index:3}
-.hd .sec{font-size:20px;font-weight:700;color:var(--ink)}
-.hd .pg{font-size:20px;font-weight:600;color:var(--gray2)}
-.tw{text-align:center;flex:none}
-.eyebrow{font-size:23px;font-weight:600;color:var(--gray);margin-bottom:14px}
-.headline{font-size:44px;font-weight:800;color:var(--ink);line-height:1.26;letter-spacing:-.01em;text-wrap:balance}
-.headline.sm{font-size:40px}
-.red{color:var(--teal)}
-.desc{font-size:24px;color:var(--body);text-align:center;margin-top:18px;line-height:1.6}
-.body{margin-top:36px;flex:none}
-/* 강조바 */
-.paybar{display:flex;align-items:center;gap:16px;background:var(--cyan-soft);border-left:5px solid var(--cyan);
-  border-radius:10px;padding:16px 26px;margin:0 auto;max-width:1120px}
-.paybar .tag{flex:none;background:var(--navy);color:#fff;font-size:15px;font-weight:800;border-radius:7px;padding:7px 13px}
-.paybar .t{font-size:22px;color:var(--ink);font-weight:600;line-height:1.46}
-.paybar .t b{color:var(--teal);font-weight:800}
-/* 흐름 노드 */
-.flow{display:flex;align-items:stretch;justify-content:center;gap:13px;flex-wrap:nowrap;margin:0 auto}
-.node{background:#f4f6f9;border:1px solid #e1e6ed;color:var(--ink);border-radius:14px;padding:18px 18px;text-align:center;display:flex;flex-direction:column;justify-content:center;min-width:0;flex:1}
-.node.hl{background:var(--cyan-soft);border:1.5px solid var(--cyan)}
-.node .nt{font-size:23px;font-weight:800;line-height:1.24;color:var(--teal)}
-.node .ns{font-size:17px;font-weight:500;color:var(--body);margin-top:8px;line-height:1.4}
-.arw{align-self:center;color:var(--cyan);font-size:28px;font-weight:900;flex:none}
-/* 2열 (구분선) */
-.two{display:flex;gap:0;justify-content:center;margin:0 auto;max-width:1160px}
-.two .c{flex:1;padding:6px 44px;position:relative}
-.two .c + .c::before{content:"";position:absolute;left:0;top:4%;height:92%;width:1px;background:var(--tline)}
-.two .ct{font-size:23px;font-weight:800;color:var(--ink);margin-bottom:13px;display:flex;align-items:center;gap:10px;justify-content:center}
-.two .ct .dot{width:10px;height:10px;border-radius:50%;background:var(--cyan);flex:none}
+.cy{color:var(--cyan)}
+.cyd{color:var(--teal)}
+.cover-t,.close-t,.h-xl,.h-lg,.h-md,.quote,.band .bhead,.results .rtitle,.kick,.close-sub,.quotesub{word-break:keep-all}
+
+/* ===== 듀오톤 실사 (네이비 모노톤 + 시안 하이라이트) ===== */
+.duo{position:absolute;inset:0;background:var(--navy);overflow:hidden;z-index:0}
+.duo img{width:100%;height:100%;object-fit:cover;mix-blend-mode:luminosity;opacity:.9;filter:contrast(1.04) brightness(1.02)}
+.duo::after{content:"";position:absolute;inset:0;background:linear-gradient(125deg,rgba(37,187,232,.20),rgba(32,35,61,0) 58%);mix-blend-mode:screen;pointer-events:none}
+
+/* ===== 헤더 (스플릿/밴드 콘텐츠용) ===== */
+.hd{display:flex;justify-content:space-between;align-items:baseline}
+.hd .sec{font-size:19px;font-weight:800;color:var(--ink);letter-spacing:.01em}
+.hd .pg{font-size:18px;font-weight:700;color:var(--gray2)}
+
+/* ===== 공통 타이포 ===== */
+.kick{font-size:20px;font-weight:700;color:var(--teal);letter-spacing:.02em}
+.h-xl{font-size:52px;font-weight:900;color:var(--ink);line-height:1.16;letter-spacing:-.02em}
+.h-lg{font-size:44px;font-weight:900;color:var(--ink);line-height:1.2;letter-spacing:-.018em}
+.h-md{font-size:38px;font-weight:900;color:var(--ink);line-height:1.24;letter-spacing:-.015em}
+.lead{font-size:24px;font-weight:600;color:var(--body);line-height:1.5}
+.cap{font-size:17px;font-weight:500;color:var(--gray);line-height:1.5}
+.cap b{color:var(--ink);font-weight:800}
+.foot{font-size:14px;font-weight:500;color:var(--gray2);line-height:1.45}
+
+/* ===== 표지 / 클로징 (풀블리드) ===== */
+.hero{justify-content:center}
+.hero .duo img{opacity:.62}
+.scrim{position:absolute;inset:0;z-index:1}
+.scrim.cover{background:linear-gradient(100deg,rgba(20,22,44,.94) 0%,rgba(20,22,44,.82) 40%,rgba(20,22,44,.45) 72%,rgba(20,22,44,.28) 100%)}
+.scrim.close{background:linear-gradient(180deg,rgba(20,22,44,.62) 0%,rgba(20,22,44,.5) 45%,rgba(20,22,44,.86) 100%)}
+.hero .inner{position:relative;z-index:2;padding:0 96px;width:100%}
+.hero .toplogos{position:absolute;top:44px;left:96px;right:96px;z-index:3;display:flex;justify-content:space-between;align-items:center}
+.brandchip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:10px;padding:9px 15px;display:inline-flex;align-items:center}
+.brandchip img{height:24px;display:block}
+.toplogos .dg img{height:21px;display:block;opacity:.92}
+
+.cover-k{font-size:21px;font-weight:800;color:var(--cyan2);letter-spacing:.03em}
+.cover-t{font-size:56px;font-weight:900;color:#fff;line-height:1.22;letter-spacing:-.022em;margin:20px 0 26px;max-width:960px;text-wrap:balance}
+.cover-who{font-size:22px;font-weight:600;color:#dfe3f2}
+.cover-who b{color:#fff;font-weight:800}
+.cover-date{font-size:18px;font-weight:500;color:#aeb4cf;margin-top:9px}
+.cover-foot{position:absolute;left:96px;bottom:40px;z-index:2;font-size:14px;color:#9aa0bd;font-weight:500}
+
+.close-lead{font-size:22px;font-weight:700;color:var(--cyan2);letter-spacing:.02em}
+.close-t{font-size:52px;font-weight:900;color:#fff;line-height:1.28;letter-spacing:-.02em;margin:18px 0 20px;max-width:1000px;text-wrap:balance}
+.close-sub{font-size:23px;font-weight:600;color:#dbe0f1;line-height:1.5;max-width:900px}
+.close-hook{margin-top:30px;display:inline-block;background:rgba(37,187,232,.14);border:1px solid rgba(84,203,239,.5);border-radius:14px;padding:18px 28px;max-width:940px}
+.close-hook .t{font-size:23px;font-weight:800;color:#fff;line-height:1.4}
+.close-hook .t em{color:var(--cyan2);font-style:normal}
+.close-sign{position:absolute;left:96px;bottom:38px;z-index:2;font-size:16px;color:#aeb4cf;font-weight:600;letter-spacing:.01em}
+
+/* ===== 좌우 스플릿 ===== */
+.split{display:grid;height:100%}
+.split.left{grid-template-columns:43% 57%}
+.split.right{grid-template-columns:57% 43%}
+.split .media{position:relative;overflow:hidden}
+.split.right .media{order:2}
+.split .content{padding:52px 60px;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.media .mtag{position:absolute;left:34px;bottom:32px;z-index:2;color:#fff;font-size:18px;font-weight:800;letter-spacing:.02em;
+  text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.media .mtag span{display:block;font-size:14px;font-weight:600;color:#cfe8f5;margin-top:5px}
+
+/* ===== 상단 이미지 밴드 ===== */
+.band{position:relative;height:184px;overflow:hidden;flex:none}
+.band .bcap{position:absolute;top:26px;left:56px;right:56px;z-index:2;display:flex;justify-content:space-between;align-items:center}
+.band .bcap .sec{font-size:18px;font-weight:800;color:#fff;letter-spacing:.03em}
+.band .bcap .pg{font-size:17px;font-weight:700;color:#c3c8e0}
+.band .bhead{position:absolute;left:56px;right:56px;bottom:28px;z-index:2;font-size:38px;font-weight:900;color:#fff;
+  line-height:1.2;letter-spacing:-.015em;text-wrap:balance}
+.band .bhead .cy{color:var(--cyan2)}
+.bbody{flex:1;padding:30px 56px 0;display:flex;flex-direction:column;min-height:0}
+
+/* ===== 2열 (구분선) ===== */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:22px}
+.two .c{padding:4px 30px}
+.two .c+.c{border-left:1px solid var(--line)}
+.two .ct{font-size:20px;font-weight:800;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.two .ct .dot{width:11px;height:11px;border-radius:50%;background:var(--cyan);flex:none}
+.two .ct.mut{color:var(--gray)}
 .two .ct.mut .dot{background:var(--gray2)}
-.two .cb{font-size:20px;font-weight:500;color:var(--body);line-height:1.54;text-align:center}
+.two .cb{font-size:21px;font-weight:600;color:var(--body);line-height:1.5}
 .two .cb b{color:var(--ink);font-weight:800}
-.two .cb .rd{color:var(--teal);font-weight:800}
-/* 다크박스 */
-.darkbox{background:var(--navy);color:#eef0f6;border-radius:14px;padding:20px 30px;font-size:22px;line-height:1.5;text-align:center;max-width:1120px;margin:0 auto;font-weight:600}
-.darkbox b{color:var(--cyan2);font-weight:800}
-.note{font-size:16px;color:var(--gray);text-align:center;margin-top:13px;line-height:1.5}
-.note b{color:var(--teal)}
-/* 완주 방어 캡션 */
-.capnote{font-size:17px;color:var(--gray);text-align:center;margin-top:14px;line-height:1.5}
-.capnote b{color:var(--ink);font-weight:700}
-/* 성과 히어로 타일 */
-.stattiles{display:flex;gap:15px;justify-content:center;max-width:1180px;margin:0 auto}
-.stile{flex:1;background:#f7f8fb;border:1px solid #e4e8ef;border-radius:16px;padding:20px 14px;text-align:center;display:flex;flex-direction:column;justify-content:center}
-.stile .big{font-size:44px;font-weight:900;color:var(--navy);line-height:1.02;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.stile .big .was{color:var(--gray2);font-weight:800}
-.stile .big .ar{color:var(--cyan);font-weight:900;margin:0 3px}
-.stile .uline{width:46px;height:4px;background:var(--cyan);border-radius:2px;margin:11px auto 0}
-.stile .lb{font-size:20px;font-weight:800;color:var(--ink);margin-top:11px}
-.stile .cx{font-size:14.5px;font-weight:500;color:var(--gray);margin-top:8px;line-height:1.4}
-.stile .biz{display:inline-block;margin-top:11px;background:var(--navy);color:#fff;font-size:13px;font-weight:800;border-radius:999px;padding:5px 13px}
-/* 조직 총괄 히어로 배지 */
-.herobadge{background:var(--navy);color:#eef0f6;border-radius:14px;padding:16px 30px;text-align:center;max-width:1160px;margin:0 auto;font-size:22px;font-weight:600;line-height:1.5}
-.herobadge b{color:var(--cyan2);font-weight:800}
-.herobadge .role{display:block;font-size:16px;color:#b9beda;font-weight:600;margin-top:7px}
-/* 규제 배지 라인 */
-.badges{display:flex;flex-wrap:wrap;gap:11px;justify-content:center;margin:0 auto;max-width:1140px}
-.badge{border:1.5px solid var(--navy);color:var(--navy);border-radius:999px;padding:9px 20px;font-size:19px;font-weight:700;background:#fff}
-/* 인라인 태그 칩 */
-.chiptag{display:inline-block;background:var(--cyan);color:var(--navy);font-size:14px;font-weight:800;border-radius:999px;padding:5px 13px;margin-right:9px;vertical-align:middle}
-/* 메타역량 이식 지도 */
-.metamap{width:100%;max-width:1184px;margin:0 auto;border-collapse:separate;border-spacing:0}
-.metamap th,.metamap td{padding:11px 12px;text-align:center;vertical-align:middle;font-size:17px;line-height:1.32;color:var(--body);border-bottom:1px solid var(--tline)}
-.metamap thead th{background:var(--thead);font-weight:800;color:var(--ink);font-size:17px;border-bottom:2px solid var(--tline)}
-.metamap thead th .sub{display:block;font-size:14px;font-weight:600;color:var(--gray);margin-top:3px}
-.metamap thead th:first-child{background:var(--navy);color:#fff}
-.metamap td.dom{background:var(--navy2);color:#fff;font-weight:800;font-size:16.5px;text-align:left;padding-left:16px;width:196px;line-height:1.28}
-.metamap td.dom .ds{display:block;font-size:13px;font-weight:600;color:#b9beda;margin-top:3px}
-.metamap td.pay{color:var(--teal);font-weight:800;font-size:16.5px}
-.metamap tr.proj td{background:var(--cyan-soft);border-top:2px solid var(--cyan);border-bottom:none;font-weight:800;color:var(--ink);font-size:17px}
-.metamap tr.proj td.dom{background:var(--cyan);color:var(--navy)}
+.two .cb .hl{color:var(--teal);font-weight:800}
+.two .cb .sm{font-size:17px;color:var(--gray);font-weight:600}
+
+/* ===== 세로 흐름 (POV) ===== */
+.vflow{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.vnode{display:flex;align-items:center;gap:16px;padding:15px 20px;border-radius:14px;background:#f5f7fb;border:1px solid var(--line)}
+.vnode.hl{background:var(--navy);border-color:var(--navy)}
+.vnode .vn{flex:none;font-size:15px;font-weight:800;color:var(--teal);width:104px;letter-spacing:.01em}
+.vnode.hl .vn{color:var(--cyan2)}
+.vnode .vt{font-size:20px;font-weight:700;color:var(--ink);line-height:1.34}
+.vnode.hl .vt{color:#fff}
+.vnode.hl .vt b{color:var(--cyan2);font-weight:800}
+.varrow{align-self:center;color:var(--cyan);font-size:20px;font-weight:900;line-height:.6;margin:-2px 0}
+
+/* ===== 가로 흐름 (진행 4단계) ===== */
+.hflow{display:flex;align-items:stretch;gap:12px;margin-top:6px}
+.hstep{flex:1;background:#f5f7fb;border:1px solid var(--line);border-radius:14px;padding:18px 16px;text-align:center;
+  display:flex;flex-direction:column;justify-content:center}
+.hstep .hn{font-size:22px;font-weight:900;color:var(--teal)}
+.hstep .hs{font-size:18px;font-weight:600;color:var(--body);margin-top:8px;line-height:1.34}
+.harr{align-self:center;color:var(--cyan);font-size:24px;font-weight:900;flex:none}
+
+/* ===== 숫자 타일 (풀블리드 다크 위) ===== */
+.results{justify-content:center;position:relative}
+.results .duo img{opacity:.5}
+.results .scrim{background:linear-gradient(115deg,rgba(20,22,44,.95) 0%,rgba(20,22,44,.86) 55%,rgba(20,22,44,.7) 100%)}
+.results .rin{position:relative;z-index:2;padding:98px 64px 54px;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center}
+.results .rhd{display:flex;justify-content:space-between;align-items:baseline;position:absolute;top:40px;left:64px;right:64px;z-index:3}
+.results .rhd .sec{font-size:19px;font-weight:800;color:#fff;letter-spacing:.03em}
+.results .rhd .pg{font-size:18px;font-weight:700;color:#c3c8e0}
+.results .rkick{font-size:20px;font-weight:700;color:var(--cyan2)}
+.results .rtitle{font-size:44px;font-weight:900;color:#fff;line-height:1.2;letter-spacing:-.018em;margin:14px 0 8px}
+.orgbadge{display:inline-flex;align-items:center;gap:12px;font-size:20px;font-weight:700;color:#dbe0f1;margin-bottom:32px}
+.orgbadge b{color:#fff;font-weight:900}
+.orgbadge .pill{background:var(--cyan);color:var(--navyd);font-size:15px;font-weight:900;border-radius:999px;padding:6px 15px}
+.gtiles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gtile{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:36px 22px;text-align:center}
+.gtile .big{font-size:52px;font-weight:900;color:#fff;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.gtile .big .was{color:#8790b3;font-weight:800}
+.gtile .big .ar{color:var(--cyan);font-weight:900;margin:0 4px}
+.gtile .ul{width:44px;height:4px;background:var(--cyan);border-radius:2px;margin:15px auto}
+.gtile .lb{font-size:21px;font-weight:800;color:#fff}
+.gtile .cx{font-size:15px;font-weight:500;color:#aeb4cf;margin-top:9px;line-height:1.4}
+.results .rfoot{font-size:16px;font-weight:600;color:#c7cce2;margin-top:30px}
+.results .rfoot b{color:var(--cyan2);font-weight:800}
+
+/* ===== 메타맵 표 ===== */
+.metamap{width:100%;border-collapse:separate;border-spacing:0;margin-top:4px}
+.metamap th,.metamap td{padding:13px 14px;text-align:center;vertical-align:middle;font-size:19px;line-height:1.3;color:var(--body);border-bottom:1px solid var(--line)}
+.metamap thead th{background:var(--thead);font-weight:800;color:var(--ink);font-size:18px}
+.metamap thead th:first-child{background:var(--navy);color:#fff;border-top-left-radius:12px}
+.metamap thead th:last-child{border-top-right-radius:12px}
+.metamap td.dom{background:var(--navy2);color:#fff;font-weight:800;font-size:18px;text-align:left;padding-left:18px;width:210px}
+.metamap td.dom .ds{display:block;font-size:14px;font-weight:600;color:#b9beda;margin-top:3px}
+.metamap td.pay{color:var(--teal);font-weight:800;font-size:19px}
+.metamap tr.proj td{background:var(--cyan-soft);border-top:2px solid var(--cyan);border-bottom:none;font-weight:800;color:var(--ink);font-size:19px}
+.metamap tr.proj td.dom{background:var(--cyan);color:var(--navyd)}
 .metamap tr.proj td.dom .ds{color:#0d5876}
 .metamap tr.proj td.pj{color:var(--teal)}
-/* 표지 */
-.cover{justify-content:center;padding:80px 96px}
-.swoosh{position:absolute;right:-190px;bottom:-250px;width:880px;height:880px;border-radius:50%;background:var(--swoosh);z-index:0}
-.swoosh:after{content:"";position:absolute;right:160px;bottom:160px;width:660px;height:660px;border-radius:50%;background:#fff}
-.cover .b{position:relative;z-index:1;max-width:1050px}
-.cover .k1{font-size:23px;font-weight:700;color:var(--teal);letter-spacing:.01em}
-.cover .k2{font-size:46px;font-weight:900;color:var(--ink);letter-spacing:-.02em;line-height:1.3;margin:18px 0 20px}
-.cover .sub2{font-size:22px;color:var(--body);font-weight:600;line-height:1.5;margin-bottom:26px}
-.cover .sub2 b{color:var(--teal);font-weight:800}
-.cover .who{font-size:24px;color:var(--body);font-weight:600}
-.cover .who b{color:var(--ink);font-weight:800}
-.cover .date{font-size:20px;color:var(--gray);margin-top:12px}
-.logo{font-weight:900;color:var(--logo)}
-/* 클로징 */
-.closing{align-items:center;text-align:center;justify-content:center}
-.closing .lead{font-size:23px;font-weight:600;color:var(--gray)}
-.closing .big{font-size:46px;font-weight:900;color:var(--ink);letter-spacing:-.02em;line-height:1.34;margin:20px auto 20px;max-width:1120px}
-.closing .big em{color:var(--teal);font-style:normal}
-.closing .subline{font-size:22px;color:var(--body);font-weight:600;line-height:1.5;max-width:1040px;margin:0 auto 26px}
-.hookband{background:var(--navy);color:#fff;border-radius:16px;padding:22px 34px;text-align:center;max-width:1060px;margin:0 auto}
-.hookband .il{font-size:25px;font-weight:800;line-height:1.44}
-.hookband .il em{color:var(--cyan2);font-style:normal}
-.hookband .sign{font-size:18px;color:#b9beda;font-weight:600;margin-top:13px}
-/* 인용 (존중 계약) */
-.quotebig{font-size:28px;font-weight:700;color:var(--ink);line-height:1.5;text-align:center;max-width:1120px;margin:0 auto;letter-spacing:-.01em}
-.quotebig .red{color:var(--teal)}
-.quotebig .mk{color:var(--cyan);font-weight:900;font-size:34px;vertical-align:-2px}
-/* 브랜드 로고 */
-.brandchip{background:var(--navy);border-radius:9px;padding:9px 15px;display:inline-flex;align-items:center}
-.brandchip img{height:26px;display:block}
-.cover .refcap{font-size:15px;color:var(--gray);margin-top:22px;font-weight:500;letter-spacing:0}
-.cover .refcap b{color:var(--body);font-weight:700}
-#wm{position:absolute;bottom:20px;right:28px;height:16px;opacity:.28;z-index:4;pointer-events:none}
+.metacap{font-size:17px;font-weight:600;color:var(--gray);margin-top:16px;text-align:center}
+.metacap b{color:var(--ink);font-weight:800}
+
+/* ===== 인용 (일하는 방식) ===== */
+.quote{font-size:36px;font-weight:900;color:var(--ink);line-height:1.3;letter-spacing:-.015em}
+.quote .cy{color:var(--teal)}
+.quote .mk{color:var(--cyan);font-weight:900}
+.quotesub{font-size:22px;font-weight:600;color:var(--body);line-height:1.5;margin-top:16px}
+
+/* ===== 규제 배지 ===== */
+.badges{display:flex;flex-wrap:wrap;gap:11px;margin-top:6px}
+.badge{border:1.5px solid var(--navy);color:var(--navy);border-radius:999px;padding:9px 20px;font-size:18px;font-weight:800;background:#fff}
+.tag{display:inline-block;background:var(--cyan);color:var(--navyd);font-size:15px;font-weight:900;border-radius:999px;padding:6px 15px;letter-spacing:.01em;white-space:nowrap;flex:none}
+
+/* ===== 강조 캡션 바 ===== */
+.cbar{display:flex;align-items:center;gap:15px;background:var(--cyan-soft);border-left:5px solid var(--cyan);border-radius:12px;padding:15px 22px;margin-top:16px}
+.cbar .t{font-size:19px;font-weight:600;color:var(--ink);line-height:1.46}
+.cbar .t b{color:var(--teal);font-weight:800}
+
+#wm{position:absolute;bottom:18px;right:26px;height:15px;opacity:.26;z-index:4;pointer-events:none}
 #bar{position:fixed;top:0;left:0;height:4px;background:var(--cyan);z-index:20;transition:width .25s}
 </style>
 <div id="fit"><div id="deck">
 
 <!-- ▼ [1] 표지 -->
-<section class="slide on cover">
-  <div class="swoosh"></div>
-  <div class="hd" style="align-items:center">
+<section class="slide on hero">
+  <div class="duo"><img src="assets/img/cover.jpg" alt="현대 의료 현장"></div>
+  <div class="scrim cover"></div>
+  <div class="toplogos">
     <span class="brandchip"><img src="assets/dai-logo.png" alt="DAI"></span>
-    <span style="display:flex;align-items:center"><img src="assets/donga-black.svg" alt="동아쏘시오그룹" style="height:22px;display:block"></span>
+    <span class="dg"><img src="assets/donga-white.svg" alt="동아쏘시오그룹"></span>
   </div>
-  <div class="b">
-    <div class="k1">AI 헬스케어 플랫폼 팀장 지원 발표</div>
-    <div class="k2">낯선 규제 도메인을 반복해서<br><span class="red">성과로 바꿔온</span> 16년차 플랫폼 구축 리더</div>
-    <div class="sub2">대표 프로젝트 <b>성과</b> · 그리고 <b>DAI 플랫폼 빌딩 기여</b></div>
-    <div class="who">발표자 · <b>정치성</b></div>
-    <div class="date">2026. 09. 16 · 동아쏘시오 · DAI AI 헬스케어 플랫폼 팀장 지원</div>
-    <div class="refcap">본 자료는 지원자 <b>정치성</b>의 임원 면접 발표자료입니다 · 로고는 지원 대상 기업 참조용</div>
+  <div class="inner">
+    <div class="cover-k">AI 헬스케어 플랫폼 팀장 지원 발표</div>
+    <div class="cover-t">낯선 규제 분야에 들어가<br><span class="cy">플랫폼을 만들어온</span> 16년</div>
+    <div class="cover-who">발표자 · <b>정치성</b></div>
+    <div class="cover-date">2026. 09. 16 · 동아쏘시오 · DAI</div>
   </div>
+  <div class="cover-foot">본 자료는 지원자 정치성의 임원 면접 발표자료입니다 · 로고는 지원 대상 기업 참조용</div>
 </section>
 
 <!-- ▼ [2] 오프너 · 왜 나 · 왜 지금 -->
 <section class="slide">
-  <div class="hd"><span class="sec">왜 나 · 왜 지금</span><span class="pg">02</span></div>
-  <div class="tw">
-    <div class="eyebrow">규제 개화기 — 디지털의료제품법 시행(2025.1) · 전송요구권 · 비대면진료 법제화(2026.12.24 시행)</div>
-    <div class="headline sm">낯선 규제 도메인 네 곳에 <span class="red">지식 0</span>으로 들어가,<br>매번 <span class="red">같은 방법</span>으로 숫자를 만들었습니다<br>한 번은 운, <span class="red">네 번은 방법</span>입니다</div>
-  </div>
-  <div class="body" style="margin-top:32px">
-    <div class="two" style="margin-bottom:22px">
-      <div class="c"><div class="ct"><span class="dot"></span>이 자리의 필수요건 = 내 강점</div>
-        <div class="cb">플랫폼 총괄 <b>PM/PO</b> · <b>이해관계자 조율</b> · <b>경영진 보고</b><br><span class="rd">→ 16년간 해온 일, 전부 충족</span></div></div>
-      <div class="c"><div class="ct mut"><span class="dot"></span>도메인 특화 = 우대사항</div>
-        <div class="cb">DTx · SaMD · RWD/RWE · 제약바이오<br><span style="color:var(--gray);font-size:18px">→ 정직하게 지금 얕고, 채워갈 부분(각주 1회)</span></div></div>
+  <div class="split left">
+    <div class="media">
+      <div class="duo"><img src="assets/img/opener.jpg" alt="디지털 헬스케어 현장"></div>
+      <div class="mtag">한 번은 운, 네 번은 방법<span>낯선 분야 네 곳, 아는 것 없이 시작</span></div>
     </div>
-    <div class="paybar"><span class="tag">한 문장</span><span class="t">이 자리의 필수요건은 전부 <b>제가 네 번 증명한 그 방법</b>입니다 — 도메인은 채워가되, 방법은 이미 강점입니다.</span></div>
+    <div class="content">
+      <div class="hd"><span class="sec">왜 나 · 왜 지금</span><span class="pg">02</span></div>
+      <div style="margin-top:26px">
+        <div class="kick">규제가 다른 분야 네 곳을 거치면서 일하는 방식은 늘 비슷했습니다</div>
+        <div class="h-lg" style="margin-top:12px">한 번은 운,<br><span class="cyd">네 번은 방법</span>입니다</div>
+      </div>
+      <div class="two">
+        <div class="c"><div class="ct"><span class="dot"></span>채용공고의 필수요건</div>
+          <div class="cb">플랫폼 총괄, 이해관계자 조율, 경영진 보고.<br><span class="hl">제가 16년간 해온 일입니다.</span></div></div>
+        <div class="c"><div class="ct mut"><span class="dot"></span>우대사항인 도메인 지식</div>
+          <div class="cb">DTx, SaMD, RWD/RWE, 제약바이오.<br><span class="sm">아직 얕습니다. 채워가겠습니다.</span></div></div>
+      </div>
+      <div class="foot" style="margin-top:24px">지금 규제가 열리는 시점입니다. 디지털의료제품법(2025) 시행, 전송요구권, 비대면진료 법제화(2026.12.24 시행).</div>
+    </div>
   </div>
 </section>
 
-<!-- ▼ [3] 메타역량 이식 지도 (센터피스) -->
+<!-- ▼ [3] 메타역량 이식 지도 -->
 <section class="slide">
-  <div class="hd"><span class="sec">메타역량 이식 지도</span><span class="pg">03</span></div>
-  <div class="tw">
-    <div class="eyebrow">믿어달라가 아니라 — 같은 기계가 네 번 돌았다</div>
-    <div class="headline sm">낯선 규제 도메인마다 <span class="red">동일한 4단계</span>로 진입해<br>매번 <span class="red">측정가능한 숫자</span>로 끝냈습니다</div>
+  <div class="band">
+    <div class="duo"><img src="assets/img/metamap.jpg" alt="연결된 세계 · 네트워크"></div>
+    <div class="bcap"><span class="sec">지나온 네 분야</span><span class="pg">03</span></div>
+    <div class="bhead">들어간 분야는 달랐지만, <span class="cy">일하는 순서</span>는 늘 같았습니다</div>
   </div>
-  <div class="body" style="margin-top:22px">
+  <div class="bbody">
     <table class="metamap">
       <thead><tr>
-        <th>낯선 규제 도메인</th>
-        <th>① 진입<span class="sub">이해관계자·규제 지형 해독</span></th>
-        <th>② 해독<span class="sub">용어·데이터·병목 매핑</span></th>
-        <th>③ 연결<span class="sub">이해관계자 정렬</span></th>
-        <th>④ 성과<span class="sub">측정가능 숫자</span></th>
+        <th>낯선 규제 도메인</th><th>① 진입</th><th>② 해독</th><th>③ 연결</th><th>④ 성과</th>
       </tr></thead>
       <tbody>
         <tr><td class="dom">굿리치<span class="ds">보험 마이데이터</span></td>
-          <td>보험 규제·마이데이터 지형</td><td>청약·심사·전환 병목</td><td>설계사·심사·개발</td>
-          <td class="pay">전환율 약 20%↑ · DB 월 약 6,000건</td></tr>
-        <tr><td class="dom">코나아이<span class="ds">지역화폐 · 20명 3팀 총괄</span></td>
-          <td>지자체·정산 규제 지형</td><td>가맹·정산 처리 병목</td><td>지자체·운영·개발 (20명 총괄)</td>
-          <td class="pay">경기·인천 재수주 + 김포페이 신규</td></tr>
+          <td>규제·지형 해독</td><td>청약·전환 병목</td><td>설계사·심사·개발</td><td class="pay">전환율 약 20%↑</td></tr>
+        <tr><td class="dom">코나아이<span class="ds">지역화폐 · 20명 총괄</span></td>
+          <td>지자체·정산 지형</td><td>가맹·정산 병목</td><td>지자체·운영·개발</td><td class="pay">경기·인천 재수주 + 김포페이</td></tr>
         <tr><td class="dom">THK 이로움케어<span class="ds">복지용구 · 요양</span></td>
-          <td>장기요양·수가 규제 지형</td><td>급여·수급자·물류 병목</td><td>요양기관·물류·개발</td>
-          <td class="pay">직배 6h→2h · 수급자조회 이용률 약 30%</td></tr>
+          <td>장기요양·수가 지형</td><td>급여·물류 병목</td><td>요양기관·물류·개발</td><td class="pay">직배 6h→2h · 이용률 약 30%</td></tr>
         <tr><td class="dom">내손안에키오스크<span class="ds">병원 원무</span></td>
-          <td>병원 원무·정산 연동 지형</td><td>원무·정산 연동 계층<br>(EMR·보험사·결제사)</td><td>병원·EMR사·결제사·개발</td>
-          <td class="pay">원무를 환자 셀프서비스 흐름으로 전환</td></tr>
-        <tr class="proj"><td class="dom">헬스케어 · 첫 90일</td>
-          <td colspan="3">같은 ①→②→③→④ 를 그대로 적용</td>
-          <td class="pj">→ 검증된 Use Case 1개 + 재사용 자산 + KPI</td></tr>
+          <td>원무·정산 연동 지형</td><td>EMR·보험사·결제사 연동</td><td>병원·EMR사·결제사</td><td class="pay">원무 → 환자 셀프서비스 전환</td></tr>
+        <tr class="proj"><td class="dom">헬스케어</td>
+          <td colspan="3">같은 순서를 여기서도 그대로 적용</td><td class="pj">→ 검증된 Use Case 1개 + 재사용 자산 + KPI</td></tr>
       </tbody>
     </table>
-    <div class="capnote"><b>굿리치 5년 3개월 = 머문 증거.</b> 옮긴 건 갈아탄 게 아니라 역할의 고도화를 마치고 더 큰 판으로 간 것 — 보험→요양→병원 원무로 헬스케어에 수렴한 궤적입니다.</div>
-    <div class="note">→ 이 기계가 도는 걸 먼저 보여드리고, 그다음 <b>여러분의 문제 위에서 돌리겠습니다.</b></div>
+    <div class="metacap"><b>굿리치에서는 5년 3개월 일했습니다.</b> 자주 옮긴 게 아니라, 맡은 일을 끝내고 보험에서 요양으로, 다시 병원 원무로 옮겨왔습니다.</div>
   </div>
 </section>
 
 <!-- ▼ [4] 대표 성과 (숫자 히어로) -->
-<section class="slide">
-  <div class="hd"><span class="sec">대표 성과</span><span class="pg">04</span></div>
-  <div class="tw">
-    <div class="eyebrow">규모를 이끄는 근육은 증명됐고 — 여기선 성과의 깊이를</div>
-    <div class="headline">규제 도메인마다 <span class="red">비즈니스·운영 성과</span>로 끝냈습니다<br>정성어 말고, 숫자로</div>
-  </div>
-  <div class="body" style="margin-top:26px">
-    <div class="herobadge" style="margin-bottom:16px">플랫폼 UX 조직 <b>20명 · 3팀 총괄</b> · 30여 지자체 · <b>경기·인천 재수주 + 김포페이 신규</b>
-      <span class="role">사업 공동성과 · 내 역할 = 제안 · UX 구조화 · 조직 운영</span></div>
-    <div class="stattiles" style="margin-bottom:16px">
-      <div class="stile"><div class="big">+약 20%</div><div class="uline"></div><div class="lb">전환율</div>
-        <div class="cx">굿리치 · DB 전환 직전 확인단계 제거<br>(동일 지표 상대 개선)</div><div class="biz">매출 직결</div></div>
-      <div class="stile"><div class="big"><span class="was">6h</span><span class="ar">→</span>2h</div><div class="uline"></div><div class="lb">처리시간</div>
-        <div class="cx">THK 직배 · 건당<br>수기 대응 제거</div><div class="biz">운영비·인건비 절감</div></div>
-      <div class="stile"><div class="big">약 30%</div><div class="uline"></div><div class="lb">기능 이용률</div>
-        <div class="cx">THK 수급자조회<br>실제 현장 채택</div><div class="biz">실사용 채택</div></div>
+<section class="slide results">
+  <div class="duo"><img src="assets/img/results.jpg" alt="기획 · 데이터 분석"></div>
+  <div class="scrim"></div>
+  <div class="rhd"><span class="sec">대표 성과</span><span class="pg">04</span></div>
+  <div class="rin">
+    <div class="rkick">숫자로 남은 결과들</div>
+    <div class="rtitle">맡은 분야마다 <span class="cy">이런 결과</span>를 냈습니다</div>
+    <div class="orgbadge"><span class="pill">조직 총괄</span> 플랫폼 UX 조직 <b>20명 · 3팀</b> · 30여 지자체 · <b>경기·인천 재수주, 김포페이 신규</b></div>
+    <div class="gtiles">
+      <div class="gtile"><div class="big">+약 20%</div><div class="ul"></div><div class="lb">전환율</div>
+        <div class="cx">굿리치 · 전환 직전 확인단계 제거<br>(동일 지표 상대 개선)</div></div>
+      <div class="gtile"><div class="big"><span class="was">6h</span><span class="ar">→</span>2h</div><div class="ul"></div><div class="lb">처리시간</div>
+        <div class="cx">THK 직배 · 건당<br>수기 대응 제거</div></div>
+      <div class="gtile"><div class="big">약 30%</div><div class="ul"></div><div class="lb">기능 이용률</div>
+        <div class="cx">THK 수급자조회 ·<br>실제 현장 채택</div></div>
     </div>
-    <div class="paybar"><span class="tag">대표님 접점</span><span class="t">보험 마이데이터를 5년 만든 현장이, 손보 <b>CIO</b>로 데이터·규제를 다루신 그 반대편입니다 — 개인정보·신용정보 규제 위의 전환은 <b>제 홈그라운드</b>입니다.</span></div>
+    <div class="rfoot">대표님이 손보 CIO로 다루셨던 그 규제 환경에서, 저는 보험 마이데이터를 <b>5년간 만들었습니다.</b></div>
   </div>
 </section>
 
-<!-- ▼ [5] DAI에 대한 내 읽기 (비즈니스 POV · 신설) -->
+<!-- ▼ [5] DAI에 대한 내 읽기 (비즈니스 POV) -->
 <section class="slide">
-  <div class="hd"><span class="sec">DAI에 대한 내 읽기 · 비즈니스 POV</span><span class="pg">05</span></div>
-  <div class="tw">
-    <div class="eyebrow">과제 제목의 빠진 절반 — 재무 낭독 말고 POV 한 장</div>
-    <div class="headline sm">진단·모니터링·관리는 <span class="red">이미 있습니다</span><br>비어 있는 건 이들을 잇는 <span class="red">연결·수익화 설계</span> — 정확히 이 자리의 일입니다</div>
-  </div>
-  <div class="body" style="margin-top:28px">
-    <div class="flow" style="margin-bottom:20px">
-      <div class="node"><div class="nt">이미 있는 것</div><div class="ns">그룹이 확보한<br>진단 · 모니터링 · 관리 접점(단품)</div></div>
-      <div class="arw">→</div>
-      <div class="node hl"><div class="nt">비어 있는 것</div><div class="ns">단품을 만성질환 케어 흐름으로<br>잇는 <b>연결 · 수익화 설계</b></div></div>
-      <div class="arw">→</div>
-      <div class="node"><div class="nt">되먹임</div><div class="ns">새 단품이 아니라<br>반복매출 + 그룹 데이터 자산</div></div>
+  <div class="split right">
+    <div class="content">
+      <div class="hd"><span class="sec">제가 보는 DAI</span><span class="pg">05</span></div>
+      <div style="margin-top:24px">
+        <div class="kick">진단, 모니터링, 관리는 그룹에 이미 있습니다</div>
+        <div class="h-md" style="margin-top:12px">이걸 <span class="cyd">하나로 잇고 수익으로</span> 만드는 일이<br>아직 비어 있습니다</div>
+      </div>
+      <div class="vflow">
+        <div class="vnode"><span class="vn">있는 것</span><span class="vt">그룹이 확보한 진단·모니터링·관리 접점</span></div>
+        <div class="varrow">▾</div>
+        <div class="vnode hl"><span class="vn">비어 있는 것</span><span class="vt"><b>흩어진 제품을 만성질환 관리 흐름으로 잇는 일</b></span></div>
+        <div class="varrow">▾</div>
+        <div class="vnode"><span class="vn">그다음</span><span class="vt">여기서 반복매출과 그룹 데이터가 쌓입니다</span></div>
+      </div>
+      <div style="margin-top:18px"><span class="tag">먼저 확인</span> <span class="cap" style="margin-left:8px">아직 확정한 계획은 아닙니다. 진단 단계에서 먼저 확인하겠습니다.</span></div>
+      <div class="foot" style="margin-top:14px">닥터눈은 메디웨일 제품(동아ST 유통), 약먹자 등은 도우(DOU) 제품(동아ST 협력)입니다.</div>
     </div>
-    <div class="darkbox" style="margin-bottom:14px"><span class="chiptag">30일 검증 가설</span>캡티브 매출은 훼손 대상이 아닌 <b>안정 기반</b> — 그 위에서 낮은 획득비용으로 첫 검증을 돌리는 내부 비치헤드. 신약·ADC와 경쟁하지 않고, 실사용데이터를 <b>R&amp;D·AIDDP로 되먹이는 저비용 보완 채널</b>입니다.</div>
-    <div class="note">확정 사업안이 아니라 30일 진단으로 검증할 <b>1번 가설</b>입니다. · 그룹 접점 존중 표기 — 닥터눈=메디웨일 제품(동아ST 2025.5 MOU 유통) · 약먹자 등=협력사 도우(DOU) 제품(동아ST 협력).</div>
+    <div class="media">
+      <div class="duo"><img src="assets/img/pov.jpg" alt="만성질환 관리 · 돌봄"></div>
+      <div class="mtag">만성질환 관리 흐름<span>가장 적은 비용으로 시작할 수 있는 일</span></div>
+    </div>
   </div>
 </section>
 
-<!-- ▼ [6] 일하는 방식 (존중계약 + 오너십 + 검증) -->
+<!-- ▼ [6] 일하는 방식 -->
 <section class="slide">
-  <div class="hd"><span class="sec">일하는 방식</span><span class="pg">06</span></div>
-  <div class="tw">
-    <div class="eyebrow">여러분의 전문성 위에 앉지 않습니다 — 먼저 선을 긋고 시작합니다</div>
-    <div class="headline sm">그 전문성이 더 빨리 성과가 되게 <span class="red">배선하겠습니다</span></div>
-  </div>
-  <div class="body" style="margin-top:24px">
-    <div class="quotebig" style="margin-bottom:22px"><span class="mk">“</span>임상 · EMR · 수가 · 워크플로우는 <span class="red">여러분의 자산</span>입니다.<br>저는 그 위에 앉는 게 아니라, 그 전문성이 더 빨리 <span class="red">성과가 되게 배선하는</span> 사람입니다.<span class="mk">”</span></div>
-    <div class="two" style="margin-bottom:20px">
-      <div class="c"><div class="ct"><span class="dot"></span>내가 오너로 결정</div>
-        <div class="cb"><b>사용 목적</b> · <b>데이터 품질 수용기준</b> · <b>검증 통과조건</b> · 변경관리 · 릴리스 게이트<br><span class="rd">→ 되돌릴 수 없는 결정엔 현업이 내 판단을 뒤집는 게이트부터</span></div></div>
-      <div class="c"><div class="ct mut"><span class="dot"></span>연구진이 결정하는 방법</div>
-        <div class="cb">라벨링 · 전처리 · 검증분할 · 드리프트 임계<br><span style="color:var(--gray);font-size:18px">→ 방법은 침범하지 않고 기준과 게이트만 소유</span></div></div>
+  <div class="split left">
+    <div class="media">
+      <div class="duo"><img src="assets/img/method.jpg" alt="현업과의 협업 · 조율"></div>
+      <div class="mtag">현업의 전문성이 먼저<span>되돌릴 결정은 함께 검증</span></div>
     </div>
-    <div class="darkbox">진단·예측 모델은 이용률이 아니라 <b>민감도·특이도·양성예측도</b>(유병률 반영)로 판정합니다 — 제 속도는 만드는 속도가 아니라 <b>틀린 가정을 빨리 제거하는 속도</b>입니다.</div>
+    <div class="content">
+      <div class="hd"><span class="sec">일하는 방식</span><span class="pg">06</span></div>
+      <div style="margin-top:22px">
+        <div class="quote"><span class="mk">“</span>임상, EMR, 수가는 <span class="cy">여러분의 자산</span>입니다<span class="mk">”</span></div>
+        <div class="quotesub">저는 그 전문성이 더 빨리 <b style="color:var(--teal)">결과로 이어지게</b> 연결하는 일을 합니다.</div>
+      </div>
+      <div class="two">
+        <div class="c"><div class="ct"><span class="dot"></span>제가 정하는 것</div>
+          <div class="cb">무엇을 위해 쓸지, 데이터 품질 기준, <b>합격·검증 조건</b>, 변경관리</div></div>
+        <div class="c"><div class="ct mut"><span class="dot"></span>연구진이 정하는 것</div>
+          <div class="cb">라벨링, 전처리, 검증분할, 드리프트 임계<br><span class="sm">방법에는 손대지 않습니다.</span></div></div>
+      </div>
+      <div class="cbar"><div class="t">진단 모델은 이용률로 판단하면 안 됩니다. <b>민감도·특이도</b>로 봐야 하고, 되돌리기 어려운 결정은 현업이 제 판단을 막을 수 있게 먼저 정해둡니다.</div></div>
+    </div>
   </div>
 </section>
 
-<!-- ▼ [7] 90일 실행 · 투자-회수 · 규제 -->
+<!-- ▼ [7] 합류 후 일하는 순서 · 투자-회수 · 규제 -->
 <section class="slide">
-  <div class="hd"><span class="sec">90일 실행 · 투자-회수 · 규제</span><span class="pg">07</span></div>
-  <div class="tw">
-    <div class="eyebrow">먼저 만들지 않고 먼저 확인합니다 — 30일간 새 앱·새 사업안 미제안</div>
-    <div class="headline">진단 → <span class="red">저비용 파일럿</span> → 검증된 자산화</div>
+  <div class="band">
+    <div class="duo"><img src="assets/img/plan.jpg" alt="진단 · 검증 계획"></div>
+    <div class="bcap"><span class="sec">합류 후 일하는 순서</span><span class="pg">07</span></div>
+    <div class="bhead">만들기 전에, 무엇이 문제인지부터 <span class="cy">확인</span>하겠습니다</div>
   </div>
-  <div class="body" style="margin-top:26px">
-    <div class="flow" style="margin-bottom:18px">
-      <div class="node"><div class="nt">1주</div><div class="ns">이해관계자 · 용어</div></div>
-      <div class="arw">→</div>
-      <div class="node"><div class="nt">2주</div><div class="ns">데이터 · 규제 지형</div></div>
-      <div class="arw">→</div>
-      <div class="node"><div class="nt">3주</div><div class="ns">병목 가설 3개</div></div>
-      <div class="arw">→</div>
-      <div class="node"><div class="nt">4주</div><div class="ns">우선순위 · 검증 계획</div></div>
+  <div class="bbody">
+    <div class="cap" style="margin-bottom:16px">먼저 진단하고, 작은 파일럿으로 확인한 다음, 되는 것만 자산으로 남깁니다. 진단 단계에서 하는 일은 이렇습니다.</div>
+    <div class="hflow">
+      <div class="hstep"><div class="hn">해독</div><div class="hs">이해관계자 · 용어</div></div>
+      <div class="harr">›</div>
+      <div class="hstep"><div class="hn">파악</div><div class="hs">데이터 · 규제 지형</div></div>
+      <div class="harr">›</div>
+      <div class="hstep"><div class="hn">가설</div><div class="hs">병목이 어디인지</div></div>
+      <div class="harr">›</div>
+      <div class="hstep"><div class="hn">계획</div><div class="hs">우선순위 · 검증 계획</div></div>
     </div>
-    <div class="paybar" style="margin-bottom:16px"><span class="tag">투자-회수</span><span class="t">첫 파일럿 = <b>신규개발 최소 · 기존자산 재사용 최대</b> · 소수 인력 · 수개월. 회수 신호=유료계약/반복매출, <b>사전 정의된 중단기준으로 손실 한정</b>, 가치도달 시점을 처음부터 못박습니다.</span></div>
-    <div class="badges" style="margin-bottom:12px">
+    <div class="cbar"><span class="tag">투자·회수</span><div class="t">첫 파일럿은 있는 자산을 최대한 재사용해 적은 인원으로 작게 시작합니다. 유료계약이나 반복매출이 나오는지 보고, 안 되면 미리 정해둔 기준에서 멈춥니다.</div></div>
+    <div class="badges">
       <span class="badge">SaMD</span><span class="badge">개인정보보호</span><span class="badge">마이데이터</span><span class="badge">리베이트 쌍벌제</span><span class="badge">환자 유인·의료광고</span>
     </div>
-    <div class="note">규제는 출시 관문이 아니라 <b>사용목적 정의 단계부터</b> 검증합니다. · 성과는 4층위(사용자·현장·사업·품질/리스크)로 계측 — 다운로드로 성공을 판단하지 않습니다.</div>
   </div>
 </section>
 
 <!-- ▼ [8] 클로징 -->
-<section class="slide closing">
-  <div class="hd"><span class="sec" style="letter-spacing:.03em">Closing</span><span class="pg">08</span></div>
-  <div class="lead">빠르되, 무모하지 않게</div>
-  <div class="big">낯선 것을 성과로 바꾸는 일을, <em>다섯 번째</em>로 —<br>이번엔 <em>끝까지 완주</em>하겠습니다</div>
-  <div class="subline">지금까진 자본·임상·유통이 받쳐 스케일까지 완주할 판이 없었을 뿐 — 이 자리가 그 첫 판이라, 남을 이유가 분명합니다.</div>
-  <div class="hookband">
-    <div class="il">뽑아주시면, 첫 30일의 <em>‘무지 지도’</em>를 <em>6주 뒤</em> 근거로 다시 보고드리겠습니다.</div>
-    <div class="sign">동아쏘시오 · DAI AI 헬스케어 플랫폼 팀장 지원 · 정치성</div>
+<section class="slide hero">
+  <div class="duo"><img src="assets/img/closing.jpg" alt="일출 · 길"></div>
+  <div class="scrim close"></div>
+  <div class="inner">
+    <div class="close-lead">마지막으로 드리고 싶은 말씀</div>
+    <div class="close-t">낯선 분야에서 플랫폼을 만드는 일,<br>이번이 <span class="cy">다섯 번째</span>입니다. 이번엔 <span class="cy">끝까지 해보고 싶습니다.</span></div>
+    <div class="close-sub">그동안은 끝까지 키워볼 판이 없었습니다. 자본과 임상, 유통이 받쳐주는 건 이번이 처음입니다.</div>
+    <div class="close-hook"><div class="t">합류하면 먼저 <em>무엇을 모르는지부터</em> 정리하겠습니다. 진단 단계를 마치면, 그 결과를 근거로 다시 보고드리겠습니다.</div></div>
   </div>
+  <div class="close-sign">동아쏘시오 · DAI AI 헬스케어 플랫폼 팀장 지원 · 정치성</div>
 </section>
 
 <img id="wm" src="assets/dai-logo-navy.png" alt="">
@@ -310,7 +372,8 @@ const fit=document.getElementById('fit');
 function scale(){const s=Math.min(innerWidth/1280,innerHeight/720);fit.style.transform=`translate(-50%,-50%) scale(${s})`;}
 function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,k)=>s.classList.toggle('on',k===i));
   document.getElementById('bar').style.width=((i+1)/slides.length*100)+'%';
-  document.getElementById('wm').style.display=(i===0)?'none':'block';}
+  const dark=slides[i].classList.contains('hero')||slides[i].classList.contains('results');
+  document.getElementById('wm').style.display=dark?'none':'block';}
 addEventListener('keydown',e=>{
   if(['ArrowRight',' ','PageDown'].includes(e.key)){show(i+1);e.preventDefault();}
   else if(['ArrowLeft','PageUp'].includes(e.key)){show(i-1);e.preventDefault();}
