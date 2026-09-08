@@ -1,385 +1,598 @@
 <!doctype html>
+<html lang="ko">
+<head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>동아쏘시오·DAI AI 헬스케어 플랫폼 팀장 지원 발표 · 정치성</title>
-<meta name="description" content="낯선 규제 도메인을 반복해서 성과로 바꿔온 16년차 플랫폼 구축 리더 — 동아쏘시오·DAI 임원 면접 자유 발표">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DAI AI 헬스케어 플랫폼 팀장 · 발표 · 정치성</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
 <style>
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css');
-:root{
-  --bg:#ffffff; --ink:#232640; --gray:#6b7089; --gray2:#9498b4; --body:#565c72;
-  --navy:#20233d; --navy2:#2b2f4e; --navyd:#181a30;
-  --cyan:#25bbe8; --cyan2:#54cbef; --teal:#1f7ea6;
-  --cyan-soft:#eaf6fc; --line:#e2e6ef; --thead:#eef1f8;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%;background:#0a0b12;overflow:hidden;
-  font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
-  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-#fit{position:fixed;top:50%;left:50%;transform-origin:center center}
-#deck{width:1280px;height:720px;position:relative;background:var(--bg);overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.5)}
-.slide{position:absolute;inset:0;display:none;flex-direction:column}
-.slide.on{display:flex}
-.cy{color:var(--cyan)}
-.cyd{color:var(--teal)}
-.cover-t,.close-t,.h-xl,.h-lg,.h-md,.quote,.band .bhead,.results .rtitle,.kick,.close-sub,.quotesub{word-break:keep-all}
+  :root{
+    --paper:#ffffff;
+    --ink:#171a2e;      /* near-black navy */
+    --ink2:#3a3f57;     /* body */
+    --muted:#7c8299;    /* caption */
+    --faint:#a9aec2;
+    --hair:#e5e8f0;
+    --hair2:#eef1f6;
+    --wash:#f5f7fb;
+    --accent:#1391b8;   /* DAI cyan-teal — single accent */
+    --accent-deep:#0c6d8c;
+    --navy:#141a33;     /* cover / closing bg */
+    --navy2:#1d2547;
+    --s:1;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ background:#e9edf3; color:var(--ink);
+    font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    font-feature-settings:"tnum" 1,"ss01" 1; }
 
-/* ===== 듀오톤 실사 (네이비 모노톤 + 시안 하이라이트) ===== */
-.duo{position:absolute;inset:0;background:var(--navy);overflow:hidden;z-index:0}
-.duo img{width:100%;height:100%;object-fit:cover;mix-blend-mode:luminosity;opacity:.9;filter:contrast(1.04) brightness(1.02)}
-.duo::after{content:"";position:absolute;inset:0;background:linear-gradient(125deg,rgba(37,187,232,.20),rgba(32,35,61,0) 58%);mix-blend-mode:screen;pointer-events:none}
+  /* ---- screen deck ---- */
+  .deck{ display:flex; flex-direction:column; align-items:center; gap:30px; padding:34px 0 60px; }
+  .stage{ width:calc(1600px * var(--s)); height:calc(900px * var(--s)); }
+  .stage .slide{ transform:scale(var(--s)); transform-origin:top left; }
 
-/* ===== 헤더 (스플릿/밴드 콘텐츠용) ===== */
-.hd{display:flex;justify-content:space-between;align-items:baseline}
-.hd .sec{font-size:19px;font-weight:800;color:var(--ink);letter-spacing:.01em}
-.hd .pg{font-size:18px;font-weight:700;color:var(--gray2)}
+  .slide{
+    position:relative; width:1600px; height:900px; background:var(--paper);
+    display:flex; flex-direction:column;
+    padding:70px 90px 55px 90px;
+    overflow:hidden;
+    box-shadow:0 18px 60px rgba(20,26,51,.14);
+  }
+  .slide-header{ flex:0 0 auto; }
+  .eyebrow{ font-size:15px; font-weight:700; letter-spacing:.22em; color:var(--accent);
+    text-transform:uppercase; display:inline-block; padding-bottom:9px;
+    border-bottom:2px solid var(--accent); }
+  h1{ font-size:46px; line-height:1.24; font-weight:800; color:var(--ink);
+    letter-spacing:-.018em; margin-top:22px; max-width:1360px; }
+  h1 .lite{ font-weight:400; color:var(--ink2); }
+  h1 .em{ color:var(--accent-deep); }
+  .slide-content{ flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; min-height:0; }
+  .slide-footer{ flex:0 0 auto; display:flex; align-items:flex-end; justify-content:space-between;
+    font-size:12.5px; color:var(--faint); letter-spacing:.02em; }
+  .slide-footer .source{ max-width:1080px; line-height:1.5; }
+  .page-number{ font-weight:700; color:var(--muted); letter-spacing:.14em; white-space:nowrap; }
+  .wm{ position:absolute; right:90px; top:74px; font-size:13px; font-weight:700; letter-spacing:.16em;
+    color:var(--faint); }
 
-/* ===== 공통 타이포 ===== */
-.kick{font-size:20px;font-weight:700;color:var(--teal);letter-spacing:.02em}
-.h-xl{font-size:52px;font-weight:900;color:var(--ink);line-height:1.16;letter-spacing:-.02em}
-.h-lg{font-size:44px;font-weight:900;color:var(--ink);line-height:1.2;letter-spacing:-.018em}
-.h-md{font-size:38px;font-weight:900;color:var(--ink);line-height:1.24;letter-spacing:-.015em}
-.lead{font-size:24px;font-weight:600;color:var(--body);line-height:1.5}
-.cap{font-size:17px;font-weight:500;color:var(--gray);line-height:1.5}
-.cap b{color:var(--ink);font-weight:800}
-.foot{font-size:14px;font-weight:500;color:var(--gray2);line-height:1.45}
+  .grid12{ display:grid; grid-template-columns:repeat(12,1fr); gap:24px; }
 
-/* ===== 표지 / 클로징 (풀블리드) ===== */
-.hero{justify-content:center}
-.hero .duo img{opacity:.62}
-.scrim{position:absolute;inset:0;z-index:1}
-.scrim.cover{background:linear-gradient(100deg,rgba(20,22,44,.94) 0%,rgba(20,22,44,.82) 40%,rgba(20,22,44,.45) 72%,rgba(20,22,44,.28) 100%)}
-.scrim.close{background:linear-gradient(180deg,rgba(20,22,44,.62) 0%,rgba(20,22,44,.5) 45%,rgba(20,22,44,.86) 100%)}
-.hero .inner{position:relative;z-index:2;padding:0 96px;width:100%}
-.hero .toplogos{position:absolute;top:44px;left:96px;right:96px;z-index:3;display:flex;justify-content:space-between;align-items:center}
-.brandchip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:10px;padding:9px 15px;display:inline-flex;align-items:center}
-.brandchip img{height:24px;display:block}
-.toplogos .dg img{height:21px;display:block;opacity:.92}
+  /* number styling */
+  .num{ font-weight:800; letter-spacing:-.03em; line-height:.92; color:var(--ink);
+    font-feature-settings:"tnum" 1; }
+  .num .u{ font-size:.42em; font-weight:700; color:var(--muted); letter-spacing:0; }
+  .accent-num{ color:var(--accent-deep); }
 
-.cover-k{font-size:21px;font-weight:800;color:var(--cyan2);letter-spacing:.03em}
-.cover-t{font-size:56px;font-weight:900;color:#fff;line-height:1.22;letter-spacing:-.022em;margin:20px 0 26px;max-width:960px;text-wrap:balance}
-.cover-who{font-size:22px;font-weight:600;color:#dfe3f2}
-.cover-who b{color:#fff;font-weight:800}
-.cover-date{font-size:18px;font-weight:500;color:#aeb4cf;margin-top:9px}
-.cover-foot{position:absolute;left:96px;bottom:40px;z-index:2;font-size:14px;color:#9aa0bd;font-weight:500}
+  /* ===== COVER / CLOSING (dark) ===== */
+  .slide-cover, .slide-closing{ background:var(--navy); color:#fff; padding:78px 90px 60px; }
+  .slide-cover .eyebrow, .slide-closing .eyebrow{ color:#5fd0ee; border-color:#2f7f9c; }
+  .cover-brand{ display:flex; align-items:center; gap:14px; font-size:14px; font-weight:600;
+    letter-spacing:.04em; color:#aeb8d6; }
+  .cover-brand .dot{ width:8px; height:8px; border-radius:50%; background:#5fd0ee; }
+  .cover-main{ flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; }
+  .cover-main h1{ color:#fff; font-size:74px; line-height:1.12; letter-spacing:-.028em; max-width:1240px; }
+  .cover-main h1 .em{ color:#5fd0ee; }
+  .cover-sub{ margin-top:26px; font-size:24px; font-weight:400; color:#c7cee4; letter-spacing:-.01em; }
+  .cover-name{ margin-top:4px; }
+  .cover-name .nm{ font-size:22px; font-weight:700; color:#fff; }
+  .cover-name .ps{ font-size:18px; color:#9aa4c6; }
+  .cover-tags{ display:flex; gap:0; margin-top:44px; border-top:1px solid rgba(255,255,255,.16); }
+  .cover-tags .t{ flex:1; padding:26px 30px 0 0; }
+  .cover-tags .t + .t{ padding-left:34px; border-left:1px solid rgba(255,255,255,.13); }
+  .cover-tags .k{ font-size:14px; font-weight:700; letter-spacing:.14em; color:#5fd0ee; }
+  .cover-tags .v{ margin-top:12px; font-size:20px; font-weight:600; color:#e7ebf6; line-height:1.42; }
+  .cover-foot{ display:flex; justify-content:space-between; align-items:flex-end;
+    font-size:13px; color:#7f89ab; letter-spacing:.03em; }
 
-.close-lead{font-size:22px;font-weight:700;color:var(--cyan2);letter-spacing:.02em}
-.close-t{font-size:52px;font-weight:900;color:#fff;line-height:1.28;letter-spacing:-.02em;margin:18px 0 20px;max-width:1000px;text-wrap:balance}
-.close-sub{font-size:23px;font-weight:600;color:#dbe0f1;line-height:1.5;max-width:900px}
-.close-hook{margin-top:30px;display:inline-block;background:rgba(37,187,232,.14);border:1px solid rgba(84,203,239,.5);border-radius:14px;padding:18px 28px;max-width:940px}
-.close-hook .t{font-size:23px;font-weight:800;color:#fff;line-height:1.4}
-.close-hook .t em{color:var(--cyan2);font-style:normal}
-.close-sign{position:absolute;left:96px;bottom:38px;z-index:2;font-size:16px;color:#aeb4cf;font-weight:600;letter-spacing:.01em}
+  /* ===== S02 pillars ===== */
+  .pillars{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; }
+  .pillar{ padding:6px 40px; }
+  .pillar + .pillar{ border-left:1px solid var(--hair); }
+  .pillar:first-child{ padding-left:0; }
+  .pillar:last-child{ padding-right:0; }
+  .pillar .k{ font-size:15px; font-weight:800; letter-spacing:.12em; color:var(--accent-deep); }
+  .pillar .n{ font-size:82px; margin:20px 0 4px; }
+  .pillar .cap{ font-size:14px; font-weight:600; color:var(--muted); letter-spacing:.01em; }
+  .pillar .d{ margin-top:22px; font-size:17px; line-height:1.62; color:var(--ink2); }
+  .content-caption{ margin-top:44px; padding-top:22px; border-top:1px solid var(--hair);
+    font-size:18px; color:var(--muted); letter-spacing:-.01em; }
+  .content-caption b{ color:var(--ink); font-weight:700; }
 
-/* ===== 좌우 스플릿 ===== */
-.split{display:grid;height:100%}
-.split.left{grid-template-columns:43% 57%}
-.split.right{grid-template-columns:57% 43%}
-.split .media{position:relative;overflow:hidden}
-.split.right .media{order:2}
-.split .content{padding:52px 60px;display:flex;flex-direction:column;justify-content:center;min-width:0}
-.media .mtag{position:absolute;left:34px;bottom:32px;z-index:2;color:#fff;font-size:18px;font-weight:800;letter-spacing:.02em;
-  text-shadow:0 2px 14px rgba(0,0,0,.5)}
-.media .mtag span{display:block;font-size:14px;font-weight:600;color:#cfe8f5;margin-top:5px}
+  /* ===== S03 process + domain map ===== */
+  .flow{ display:flex; align-items:stretch; margin-bottom:6px; }
+  .flow .step{ flex:1; text-align:center; padding:0 6px; position:relative; }
+  .flow .badge{ width:44px; height:44px; border-radius:50%; margin:0 auto; display:flex;
+    align-items:center; justify-content:center; font-weight:800; font-size:17px;
+    color:#fff; background:var(--accent); }
+  .flow .step.last .badge{ background:var(--ink); }
+  .flow .lbl{ margin-top:14px; font-size:17px; font-weight:700; color:var(--ink); line-height:1.32; }
+  .flow .chev{ flex:0 0 30px; display:flex; align-items:center; justify-content:center;
+    color:var(--faint); }
+  .domain-map{ margin-top:38px; border-top:1px solid var(--hair); }
+  .dmrow{ display:grid; grid-template-columns:2.2fr 3.4fr 2.4fr; gap:20px; align-items:center;
+    padding:16px 4px; border-bottom:1px solid var(--hair2); }
+  .dmrow .dom{ font-size:19px; font-weight:800; color:var(--ink); }
+  .dmrow .dom span{ display:block; font-size:13.5px; font-weight:600; color:var(--muted); margin-top:3px; letter-spacing:.01em; }
+  .dmrow .mid{ font-size:16px; color:var(--ink2); line-height:1.5; }
+  .dmrow .kpi{ text-align:right; font-size:16px; font-weight:700; color:var(--accent-deep); }
+  .dmrow .kpi b{ font-size:20px; }
 
-/* ===== 상단 이미지 밴드 ===== */
-.band{position:relative;height:184px;overflow:hidden;flex:none}
-.band .bcap{position:absolute;top:26px;left:56px;right:56px;z-index:2;display:flex;justify-content:space-between;align-items:center}
-.band .bcap .sec{font-size:18px;font-weight:800;color:#fff;letter-spacing:.03em}
-.band .bcap .pg{font-size:17px;font-weight:700;color:#c3c8e0}
-.band .bhead{position:absolute;left:56px;right:56px;bottom:28px;z-index:2;font-size:38px;font-weight:900;color:#fff;
-  line-height:1.2;letter-spacing:-.015em;text-wrap:balance}
-.band .bhead .cy{color:var(--cyan2)}
-.bbody{flex:1;padding:30px 56px 0;display:flex;flex-direction:column;min-height:0}
+  /* ===== S04 healthcare timeline ===== */
+  .hc-track{ position:relative; margin-top:8px; }
+  .hc-line{ position:absolute; top:33px; left:8%; right:8%; height:2px; background:var(--hair); }
+  .hc-line .fill{ position:absolute; inset:0; background:linear-gradient(90deg,var(--accent),var(--accent-deep)); }
+  .hc-cols{ display:grid; grid-template-columns:repeat(3,1fr); gap:40px; position:relative; }
+  .hc-col{ text-align:left; padding:0 6px; }
+  .hc-node{ width:22px; height:22px; border-radius:50%; background:var(--accent); border:5px solid #fff;
+    box-shadow:0 0 0 2px var(--accent); margin:23px 0 0 0; }
+  .hc-stage{ margin-top:26px; font-size:14px; font-weight:800; letter-spacing:.14em; color:var(--accent-deep); }
+  .hc-title{ margin-top:8px; font-size:25px; font-weight:800; color:var(--ink); letter-spacing:-.01em; }
+  .hc-meta{ margin-top:4px; font-size:14.5px; font-weight:600; color:var(--muted); }
+  .hc-desc{ margin-top:16px; font-size:16px; line-height:1.6; color:var(--ink2); }
+  .hc-metric{ margin-top:16px; display:flex; gap:26px; }
+  .hc-metric .m .mv{ font-size:30px; font-weight:800; color:var(--ink); letter-spacing:-.02em; }
+  .hc-metric .m .ml{ font-size:13px; font-weight:600; color:var(--muted); margin-top:2px; }
+  .honest{ margin-top:34px; background:var(--wash); border-left:4px solid var(--accent);
+    padding:20px 26px; font-size:18px; line-height:1.58; color:var(--ink); }
+  .honest b{ color:var(--accent-deep); }
 
-/* ===== 2열 (구분선) ===== */
-.two{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:22px}
-.two .c{padding:4px 30px}
-.two .c+.c{border-left:1px solid var(--line)}
-.two .ct{font-size:20px;font-weight:800;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:10px}
-.two .ct .dot{width:11px;height:11px;border-radius:50%;background:var(--cyan);flex:none}
-.two .ct.mut{color:var(--gray)}
-.two .ct.mut .dot{background:var(--gray2)}
-.two .cb{font-size:21px;font-weight:600;color:var(--body);line-height:1.5}
-.two .cb b{color:var(--ink);font-weight:800}
-.two .cb .hl{color:var(--teal);font-weight:800}
-.two .cb .sm{font-size:17px;color:var(--gray);font-weight:600}
+  /* ===== S05 leadership hub ===== */
+  .lead-wrap{ display:grid; grid-template-columns:1.35fr 1fr; gap:40px; align-items:center; }
+  .lead-proof .pf{ padding:16px 0; border-top:1px solid var(--hair); }
+  .lead-proof .pf:last-child{ border-bottom:1px solid var(--hair); }
+  .lead-proof .pf .pt{ font-size:18px; font-weight:700; color:var(--ink); }
+  .lead-proof .pf .pd{ margin-top:5px; font-size:15px; line-height:1.55; color:var(--ink2); }
+  .lead-proof .pf .pd b{ color:var(--accent-deep); }
 
-/* ===== 세로 흐름 (POV) ===== */
-.vflow{display:flex;flex-direction:column;gap:10px;margin-top:8px}
-.vnode{display:flex;align-items:center;gap:16px;padding:15px 20px;border-radius:14px;background:#f5f7fb;border:1px solid var(--line)}
-.vnode.hl{background:var(--navy);border-color:var(--navy)}
-.vnode .vn{flex:none;font-size:15px;font-weight:800;color:var(--teal);width:104px;letter-spacing:.01em}
-.vnode.hl .vn{color:var(--cyan2)}
-.vnode .vt{font-size:20px;font-weight:700;color:var(--ink);line-height:1.34}
-.vnode.hl .vt{color:#fff}
-.vnode.hl .vt b{color:var(--cyan2);font-weight:800}
-.varrow{align-self:center;color:var(--cyan);font-size:20px;font-weight:900;line-height:.6;margin:-2px 0}
+  /* ===== S06 why dai ===== */
+  .dai-wrap{ display:grid; grid-template-columns:1fr 78px 1fr; gap:0; align-items:stretch; }
+  .dai-col .ct{ font-size:15px; font-weight:800; letter-spacing:.1em; color:var(--muted); margin-bottom:16px; }
+  .dai-col.right .ct{ color:var(--accent-deep); }
+  .asset{ display:flex; gap:15px; padding:13px 0; border-bottom:1px solid var(--hair2); align-items:flex-start; }
+  .asset .ic{ flex:0 0 30px; color:var(--accent-deep); margin-top:1px; }
+  .asset .txt .at{ font-size:17px; font-weight:700; color:var(--ink); }
+  .asset .txt .ad{ font-size:14px; color:var(--muted); margin-top:2px; line-height:1.45; }
+  .dai-gate{ display:flex; align-items:center; justify-content:center; color:var(--accent); }
+  .dai-role{ background:var(--navy); color:#fff; border-radius:2px; padding:34px 34px;
+    height:100%; display:flex; flex-direction:column; justify-content:center; }
+  .dai-role .rk{ font-size:15px; font-weight:800; letter-spacing:.1em; color:#5fd0ee; }
+  .dai-role .rt{ margin-top:18px; font-size:27px; font-weight:800; line-height:1.34; letter-spacing:-.01em; }
+  .dai-role .rt em{ color:#5fd0ee; font-style:normal; }
+  .dai-role .rd{ margin-top:20px; font-size:16px; line-height:1.62; color:#c7cee4; }
+  .respect{ margin-top:26px; padding-top:20px; border-top:1px solid var(--hair);
+    font-size:17px; line-height:1.56; color:var(--ink2); }
+  .respect b{ color:var(--ink); font-weight:700; }
 
-/* ===== 가로 흐름 (진행 4단계) ===== */
-.hflow{display:flex;align-items:stretch;gap:12px;margin-top:6px}
-.hstep{flex:1;background:#f5f7fb;border:1px solid var(--line);border-radius:14px;padding:18px 16px;text-align:center;
-  display:flex;flex-direction:column;justify-content:center}
-.hstep .hn{font-size:22px;font-weight:900;color:var(--teal)}
-.hstep .hs{font-size:18px;font-weight:600;color:var(--body);margin-top:8px;line-height:1.34}
-.harr{align-self:center;color:var(--cyan);font-size:24px;font-weight:900;flex:none}
+  /* ===== S07 90 days ===== */
+  .days{ display:grid; grid-template-columns:repeat(3,1fr); gap:34px; }
+  .day{ position:relative; padding:30px 30px 30px 0; }
+  .day + .day{ padding-left:34px; border-left:1px solid var(--hair); }
+  .day .st{ font-size:16px; font-weight:800; letter-spacing:.06em; color:var(--accent-deep); }
+  .day .no{ font-size:64px; font-weight:800; color:var(--hair); letter-spacing:-.03em; line-height:1;
+    position:absolute; right:24px; top:14px; }
+  .day .dt{ margin-top:14px; font-size:24px; font-weight:800; color:var(--ink); }
+  .day .dtk{ font-size:15px; font-weight:700; color:var(--muted); margin-top:2px; letter-spacing:.02em; }
+  .day ul{ margin-top:18px; list-style:none; }
+  .day li{ position:relative; padding-left:20px; font-size:16px; line-height:1.55; color:var(--ink2);
+    margin-bottom:12px; }
+  .day li::before{ content:""; position:absolute; left:0; top:9px; width:7px; height:7px;
+    background:var(--accent); border-radius:50%; }
 
-/* ===== 숫자 타일 (풀블리드 다크 위) ===== */
-.results{justify-content:center;position:relative}
-.results .duo img{opacity:.5}
-.results .scrim{background:linear-gradient(115deg,rgba(20,22,44,.95) 0%,rgba(20,22,44,.86) 55%,rgba(20,22,44,.7) 100%)}
-.results .rin{position:relative;z-index:2;padding:98px 64px 54px;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center}
-.results .rhd{display:flex;justify-content:space-between;align-items:baseline;position:absolute;top:40px;left:64px;right:64px;z-index:3}
-.results .rhd .sec{font-size:19px;font-weight:800;color:#fff;letter-spacing:.03em}
-.results .rhd .pg{font-size:18px;font-weight:700;color:#c3c8e0}
-.results .rkick{font-size:20px;font-weight:700;color:var(--cyan2)}
-.results .rtitle{font-size:44px;font-weight:900;color:#fff;line-height:1.2;letter-spacing:-.018em;margin:14px 0 8px}
-.orgbadge{display:inline-flex;align-items:center;gap:12px;font-size:20px;font-weight:700;color:#dbe0f1;margin-bottom:32px}
-.orgbadge b{color:#fff;font-weight:900}
-.orgbadge .pill{background:var(--cyan);color:var(--navyd);font-size:15px;font-weight:900;border-radius:999px;padding:6px 15px}
-.gtiles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.gtile{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:36px 22px;text-align:center}
-.gtile .big{font-size:52px;font-weight:900;color:#fff;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.gtile .big .was{color:#8790b3;font-weight:800}
-.gtile .big .ar{color:var(--cyan);font-weight:900;margin:0 4px}
-.gtile .ul{width:44px;height:4px;background:var(--cyan);border-radius:2px;margin:15px auto}
-.gtile .lb{font-size:21px;font-weight:800;color:#fff}
-.gtile .cx{font-size:15px;font-weight:500;color:#aeb4cf;margin-top:9px;line-height:1.4}
-.results .rfoot{font-size:16px;font-weight:600;color:#c7cce2;margin-top:30px}
-.results .rfoot b{color:var(--cyan2);font-weight:800}
+  /* ===== S08 closing ===== */
+  .close-main{ flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; }
+  .transitions{ display:flex; gap:0; margin-bottom:52px; }
+  .transitions .tr{ flex:1; padding-right:40px; }
+  .transitions .tr + .tr{ padding-left:40px; border-left:1px solid rgba(255,255,255,.14); }
+  .transitions .tr .from{ font-size:17px; font-weight:600; color:#8a94b8; letter-spacing:.02em; }
+  .transitions .tr .arw{ margin:12px 0; color:#5fd0ee; }
+  .transitions .tr .to{ font-size:27px; font-weight:800; color:#fff; letter-spacing:-.01em; }
+  .close-line{ font-size:38px; font-weight:800; line-height:1.34; color:#fff; letter-spacing:-.02em;
+    max-width:1300px; }
+  .close-line .em{ color:#5fd0ee; }
 
-/* ===== 메타맵 표 ===== */
-.metamap{width:100%;border-collapse:separate;border-spacing:0;margin-top:4px}
-.metamap th,.metamap td{padding:13px 14px;text-align:center;vertical-align:middle;font-size:19px;line-height:1.3;color:var(--body);border-bottom:1px solid var(--line)}
-.metamap thead th{background:var(--thead);font-weight:800;color:var(--ink);font-size:18px}
-.metamap thead th:first-child{background:var(--navy);color:#fff;border-top-left-radius:12px}
-.metamap thead th:last-child{border-top-right-radius:12px}
-.metamap td.dom{background:var(--navy2);color:#fff;font-weight:800;font-size:18px;text-align:left;padding-left:18px;width:210px}
-.metamap td.dom .ds{display:block;font-size:14px;font-weight:600;color:#b9beda;margin-top:3px}
-.metamap td.pay{color:var(--teal);font-weight:800;font-size:19px}
-.metamap tr.proj td{background:var(--cyan-soft);border-top:2px solid var(--cyan);border-bottom:none;font-weight:800;color:var(--ink);font-size:19px}
-.metamap tr.proj td.dom{background:var(--cyan);color:var(--navyd)}
-.metamap tr.proj td.dom .ds{color:#0d5876}
-.metamap tr.proj td.pj{color:var(--teal)}
-.metacap{font-size:17px;font-weight:600;color:var(--gray);margin-top:16px;text-align:center}
-.metacap b{color:var(--ink);font-weight:800}
-
-/* ===== 인용 (일하는 방식) ===== */
-.quote{font-size:36px;font-weight:900;color:var(--ink);line-height:1.3;letter-spacing:-.015em}
-.quote .cy{color:var(--teal)}
-.quote .mk{color:var(--cyan);font-weight:900}
-.quotesub{font-size:22px;font-weight:600;color:var(--body);line-height:1.5;margin-top:16px}
-
-/* ===== 규제 배지 ===== */
-.badges{display:flex;flex-wrap:wrap;gap:11px;margin-top:6px}
-.badge{border:1.5px solid var(--navy);color:var(--navy);border-radius:999px;padding:9px 20px;font-size:18px;font-weight:800;background:#fff}
-.tag{display:inline-block;background:var(--cyan);color:var(--navyd);font-size:15px;font-weight:900;border-radius:999px;padding:6px 15px;letter-spacing:.01em;white-space:nowrap;flex:none}
-
-/* ===== 강조 캡션 바 ===== */
-.cbar{display:flex;align-items:center;gap:15px;background:var(--cyan-soft);border-left:5px solid var(--cyan);border-radius:12px;padding:15px 22px;margin-top:16px}
-.cbar .t{font-size:19px;font-weight:600;color:var(--ink);line-height:1.46}
-.cbar .t b{color:var(--teal);font-weight:800}
-
-#wm{position:absolute;bottom:18px;right:26px;height:15px;opacity:.26;z-index:4;pointer-events:none}
-#bar{position:fixed;top:0;left:0;height:4px;background:var(--cyan);z-index:20;transition:width .25s}
+  /* ---- print ---- */
+  @page{ size:1600px 900px; margin:0; }
+  @media print{
+    html,body{ background:#fff; }
+    .deck{ display:block; padding:0; gap:0; }
+    .stage{ width:auto; height:auto; }
+    .stage .slide{ transform:none; }
+    .slide{ box-shadow:none; page-break-after:always; break-after:page; }
+    .slide:last-child{ page-break-after:auto; break-after:auto; }
+    *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  }
 </style>
-<div id="fit"><div id="deck">
+</head>
+<body>
+<div class="deck">
 
-<!-- ▼ [1] 표지 -->
-<section class="slide on hero">
-  <div class="duo"><img src="assets/img/cover.jpg" alt="현대 의료 현장"></div>
-  <div class="scrim cover"></div>
-  <div class="toplogos">
-    <span class="brandchip"><img src="assets/dai-logo.png" alt="DAI"></span>
-    <span class="dg"><img src="assets/donga-white.svg" alt="동아쏘시오그룹"></span>
-  </div>
-  <div class="inner">
-    <div class="cover-k">AI 헬스케어 플랫폼 팀장 지원 발표</div>
-    <div class="cover-t">낯선 규제 분야에 들어가<br><span class="cy">플랫폼을 만들어온</span> 16년</div>
-    <div class="cover-who">발표자 · <b>정치성</b></div>
-    <div class="cover-date">2026. 09. 16 · 동아쏘시오 · DAI</div>
-  </div>
-  <div class="cover-foot">본 자료는 지원자 정치성의 임원 면접 발표자료입니다 · 로고는 지원 대상 기업 참조용</div>
-</section>
-
-<!-- ▼ [2] 오프너 · 왜 나 · 왜 지금 -->
-<section class="slide">
-  <div class="split left">
-    <div class="media">
-      <div class="duo"><img src="assets/img/opener.jpg" alt="디지털 헬스케어 현장"></div>
-      <div class="mtag">한 번은 운, 네 번은 방법<span>낯선 분야 네 곳, 아는 것 없이 시작</span></div>
+<!-- ============ 01 COVER ============ -->
+<div class="stage"><section class="slide slide-cover">
+  <div class="cover-brand"><span class="dot"></span>동아쏘시오그룹 · DAI &nbsp;|&nbsp; AI 헬스케어 플랫폼 팀장 지원</div>
+  <div class="cover-main">
+    <div class="eyebrow">AI HEALTHCARE PRODUCT LEADER</div>
+    <h1 style="margin-top:30px">헬스케어의 복잡함을,<br><span class="em">실제 쓰이는 제품</span>으로.</h1>
+    <div class="cover-sub">AI·데이터·현업을 연결해 사업 임팩트를 만드는 플랫폼 팀장</div>
+    <div class="cover-name" style="margin-top:22px">
+      <span class="nm">정치성</span> &nbsp;<span class="ps">· 서비스·플랫폼 기획 리더</span>
     </div>
-    <div class="content">
-      <div class="hd"><span class="sec">왜 나 · 왜 지금</span><span class="pg">02</span></div>
-      <div style="margin-top:26px">
-        <div class="kick">규제가 다른 분야 네 곳을 거치면서 일하는 방식은 늘 비슷했습니다</div>
-        <div class="h-lg" style="margin-top:12px">한 번은 운,<br><span class="cyd">네 번은 방법</span>입니다</div>
+    <div class="cover-tags">
+      <div class="t"><div class="k">HEALTHCARE 유관 8년</div><div class="v">보험 · 돌봄 · 병원<br>고규제 도메인 3개 지점</div></div>
+      <div class="t"><div class="k">규제 신사업 구축</div><div class="v">인접 규제 도메인 신사업 0→1<br>· 조직 총괄</div></div>
+      <div class="t"><div class="k">AI 활용 실무</div><div class="v">AI로 기획서·프로토타입을 빠르게<br>만들어 앞단을 정리</div></div>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <span>2026 · 임원 면접 발표</span>
+    <span class="page-number">01 / 08</span>
+  </div>
+</section></div>
+
+<!-- ============ 02 WHY ME ============ -->
+<div class="stage"><section class="slide">
+  <div class="wm">DAI · 정치성</div>
+  <header class="slide-header">
+    <div class="eyebrow">WHY ME</div>
+    <h1>네 가지가 한 사람 안에 있을 때,<br><span class="lite">기술은 비로소 </span><span class="em">‘쓰이는 제품’</span><span class="lite">이 됩니다.</span></h1>
+  </header>
+  <div class="slide-content">
+    <div class="pillars">
+      <div class="pillar">
+        <div class="k">PRODUCT</div>
+        <div class="num n">200<span class="u">만</span></div>
+        <div class="cap">굿리치 앱 누적 가입</div>
+        <div class="d">화면 너머 정책·프로세스·외부연동까지 모순 없이 잇는 <b>플랫폼 설계</b>.</div>
       </div>
-      <div class="two">
-        <div class="c"><div class="ct"><span class="dot"></span>채용공고의 필수요건</div>
-          <div class="cb">플랫폼 총괄, 이해관계자 조율, 경영진 보고.<br><span class="hl">제가 16년간 해온 일입니다.</span></div></div>
-        <div class="c"><div class="ct mut"><span class="dot"></span>우대사항인 도메인 지식</div>
-          <div class="cb">DTx, SaMD, RWD/RWE, 제약바이오.<br><span class="sm">아직 얕습니다. 채워가겠습니다.</span></div></div>
+      <div class="pillar">
+        <div class="k">HEALTHCARE</div>
+        <div class="num n">8<span class="u">년</span></div>
+        <div class="cap">헬스케어 유관 경력</div>
+        <div class="d">보험 → 돌봄 → 병원, 고규제 도메인 3개 지점을 <b>실제 제품</b>으로.</div>
       </div>
-      <div class="foot" style="margin-top:24px">지금 규제가 열리는 시점입니다. 디지털의료제품법(2025) 시행, 전송요구권, 비대면진료 법제화(2026.12.24 시행).</div>
-    </div>
-  </div>
-</section>
-
-<!-- ▼ [3] 메타역량 이식 지도 -->
-<section class="slide">
-  <div class="band">
-    <div class="duo"><img src="assets/img/metamap.jpg" alt="연결된 세계 · 네트워크"></div>
-    <div class="bcap"><span class="sec">지나온 네 분야</span><span class="pg">03</span></div>
-    <div class="bhead">들어간 분야는 달랐지만, <span class="cy">일하는 순서</span>는 늘 같았습니다</div>
-  </div>
-  <div class="bbody">
-    <table class="metamap">
-      <thead><tr>
-        <th>낯선 규제 도메인</th><th>① 진입</th><th>② 해독</th><th>③ 연결</th><th>④ 성과</th>
-      </tr></thead>
-      <tbody>
-        <tr><td class="dom">굿리치<span class="ds">보험 마이데이터</span></td>
-          <td>규제·지형 해독</td><td>청약·전환 병목</td><td>설계사·심사·개발</td><td class="pay">전환율 약 20%↑</td></tr>
-        <tr><td class="dom">코나아이<span class="ds">지역화폐 · 20명 총괄</span></td>
-          <td>지자체·정산 지형</td><td>가맹·정산 병목</td><td>지자체·운영·개발</td><td class="pay">경기·인천 재수주 + 김포페이</td></tr>
-        <tr><td class="dom">THK 이로움케어<span class="ds">복지용구 · 요양</span></td>
-          <td>장기요양·수가 지형</td><td>급여·물류 병목</td><td>요양기관·물류·개발</td><td class="pay">직배 6h→2h · 이용률 약 30%</td></tr>
-        <tr><td class="dom">내손안에키오스크<span class="ds">병원 원무</span></td>
-          <td>원무·정산 연동 지형</td><td>EMR·보험사·결제사 연동</td><td>병원·EMR사·결제사</td><td class="pay">원무 → 환자 셀프서비스 전환</td></tr>
-        <tr class="proj"><td class="dom">헬스케어</td>
-          <td colspan="3">같은 순서를 여기서도 그대로 적용</td><td class="pj">→ 검증된 Use Case 1개 + 재사용 자산 + KPI</td></tr>
-      </tbody>
-    </table>
-    <div class="metacap"><b>굿리치에서는 5년 3개월 일했습니다.</b> 자주 옮긴 게 아니라, 맡은 일을 끝내고 보험에서 요양으로, 다시 병원 원무로 옮겨왔습니다.</div>
-  </div>
-</section>
-
-<!-- ▼ [4] 대표 성과 (숫자 히어로) -->
-<section class="slide results">
-  <div class="duo"><img src="assets/img/results.jpg" alt="기획 · 데이터 분석"></div>
-  <div class="scrim"></div>
-  <div class="rhd"><span class="sec">대표 성과</span><span class="pg">04</span></div>
-  <div class="rin">
-    <div class="rkick">숫자로 남은 결과들</div>
-    <div class="rtitle">맡은 분야마다 <span class="cy">이런 결과</span>를 냈습니다</div>
-    <div class="orgbadge"><span class="pill">조직 총괄</span> 플랫폼 UX 조직 <b>20명 · 3팀</b> · 30여 지자체 · <b>경기·인천 재수주, 김포페이 신규</b></div>
-    <div class="gtiles">
-      <div class="gtile"><div class="big">+약 20%</div><div class="ul"></div><div class="lb">전환율</div>
-        <div class="cx">굿리치 · 전환 직전 확인단계 제거<br>(동일 지표 상대 개선)</div></div>
-      <div class="gtile"><div class="big"><span class="was">6h</span><span class="ar">→</span>2h</div><div class="ul"></div><div class="lb">처리시간</div>
-        <div class="cx">THK 직배 · 건당<br>수기 대응 제거</div></div>
-      <div class="gtile"><div class="big">약 30%</div><div class="ul"></div><div class="lb">기능 이용률</div>
-        <div class="cx">THK 수급자조회 ·<br>실제 현장 채택</div></div>
-    </div>
-    <div class="rfoot">대표님이 손보 CIO로 다루셨던 그 규제 환경에서, 저는 보험 마이데이터를 <b>5년간 만들었습니다.</b></div>
-  </div>
-</section>
-
-<!-- ▼ [5] DAI에 대한 내 읽기 (비즈니스 POV) -->
-<section class="slide">
-  <div class="split right">
-    <div class="content">
-      <div class="hd"><span class="sec">제가 보는 DAI</span><span class="pg">05</span></div>
-      <div style="margin-top:24px">
-        <div class="kick">진단, 모니터링, 관리는 그룹에 이미 있습니다</div>
-        <div class="h-md" style="margin-top:12px">이걸 <span class="cyd">하나로 잇고 수익으로</span> 만드는 일이<br>아직 비어 있습니다</div>
+      <div class="pillar">
+        <div class="k">LEADERSHIP</div>
+        <div class="num n">20<span class="u">+</span></div>
+        <div class="cap">총괄 UX 통합 조직</div>
+        <div class="d">개발·디자인·사업·현업·외부를 <b>한 방향으로</b> 정렬한 경험.</div>
       </div>
-      <div class="vflow">
-        <div class="vnode"><span class="vn">있는 것</span><span class="vt">그룹이 확보한 진단·모니터링·관리 접점</span></div>
-        <div class="varrow">▾</div>
-        <div class="vnode hl"><span class="vn">비어 있는 것</span><span class="vt"><b>흩어진 제품을 만성질환 관리 흐름으로 잇는 일</b></span></div>
-        <div class="varrow">▾</div>
-        <div class="vnode"><span class="vn">그다음</span><span class="vt">여기서 반복매출과 그룹 데이터가 쌓입니다</span></div>
+      <div class="pillar">
+        <div class="k">BUSINESS IMPACT</div>
+        <div class="num n accent-num">+20<span class="u">%</span></div>
+        <div class="cap">제가 개편한 전환 흐름 기준</div>
+        <div class="d">가설을 데이터로 검증하고, 데이터를 <b>제품 결정</b>으로 잇습니다. 월 6천 DB 리드 퍼널.</div>
       </div>
-      <div style="margin-top:18px"><span class="tag">먼저 확인</span> <span class="cap" style="margin-left:8px">아직 확정한 계획은 아닙니다. 진단 단계에서 먼저 확인하겠습니다.</span></div>
-      <div class="foot" style="margin-top:14px">닥터눈은 메디웨일 제품(동아ST 유통), 약먹자 등은 도우(DOU) 제품(동아ST 협력)입니다.</div>
     </div>
-    <div class="media">
-      <div class="duo"><img src="assets/img/pov.jpg" alt="만성질환 관리 · 돌봄"></div>
-      <div class="mtag">만성질환 관리 흐름<span>가장 적은 비용으로 시작할 수 있는 일</span></div>
-    </div>
+    <div class="content-caption">전략만 세우는 사람도, 실무만 하는 사람도 아닙니다. <b>둘을 잇는 자리</b>에 서 온 사람입니다.</div>
   </div>
-</section>
+  <footer class="slide-footer">
+    <div class="source"></div><div class="page-number">02 / 08</div>
+  </footer>
+</section></div>
 
-<!-- ▼ [6] 일하는 방식 -->
-<section class="slide">
-  <div class="split left">
-    <div class="media">
-      <div class="duo"><img src="assets/img/method.jpg" alt="현업과의 협업 · 조율"></div>
-      <div class="mtag">현업의 전문성이 먼저<span>되돌릴 결정은 함께 검증</span></div>
+<!-- ============ 03 HOW I BUILD ============ -->
+<div class="stage"><section class="slide">
+  <div class="wm">DAI · 정치성</div>
+  <header class="slide-header">
+    <div class="eyebrow">HOW I BUILD</div>
+    <h1>우연한 성공이 아니라, <span class="em">반복되는 방법</span>입니다.</h1>
+  </header>
+  <div class="slide-content">
+    <div class="flow">
+      <div class="step"><div class="badge">1</div><div class="lbl">문제 정의<br><span style="font-size:13px;color:#9aa" >Business Problem</span></div></div>
+      <div class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="step"><div class="badge">2</div><div class="lbl">사용자·프로세스<br><span style="font-size:13px;color:#9aa">User · Process</span></div></div>
+      <div class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="step"><div class="badge">3</div><div class="lbl">정책·데이터<br><span style="font-size:13px;color:#9aa">Policy · Data</span></div></div>
+      <div class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="step"><div class="badge">4</div><div class="lbl">제품<br><span style="font-size:13px;color:#9aa">Product</span></div></div>
+      <div class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="step"><div class="badge">5</div><div class="lbl">조직<br><span style="font-size:13px;color:#9aa">Organization</span></div></div>
+      <div class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="step last"><div class="badge">6</div><div class="lbl">성과<br><span style="font-size:13px;color:#9aa">KPI</span></div></div>
     </div>
-    <div class="content">
-      <div class="hd"><span class="sec">일하는 방식</span><span class="pg">06</span></div>
-      <div style="margin-top:22px">
-        <div class="quote"><span class="mk">“</span>임상, EMR, 수가는 <span class="cy">여러분의 자산</span>입니다<span class="mk">”</span></div>
-        <div class="quotesub">저는 그 전문성이 더 빨리 <b style="color:var(--teal)">결과로 이어지게</b> 연결하는 일을 합니다.</div>
+    <div class="domain-map">
+      <div class="dmrow">
+        <div class="dom">인슈어테크<span>굿리치 · 보험</span></div>
+        <div class="mid">보험 정책 정합 + 데이터 기반 UX로 다이렉트 보험 흐름을 설계</div>
+        <div class="kpi">전환율 <b>+20%</b> · 앱 <b>200만</b></div>
       </div>
-      <div class="two">
-        <div class="c"><div class="ct"><span class="dot"></span>제가 정하는 것</div>
-          <div class="cb">무엇을 위해 쓸지, 데이터 품질 기준, <b>합격·검증 조건</b>, 변경관리</div></div>
-        <div class="c"><div class="ct mut"><span class="dot"></span>연구진이 정하는 것</div>
-          <div class="cb">라벨링, 전처리, 검증분할, 드리프트 임계<br><span class="sm">방법에는 손대지 않습니다.</span></div></div>
+      <div class="dmrow">
+        <div class="dom">공공·지역화폐<span>코나아이 · 공공</span></div>
+        <div class="mid">다자 정산 설계 + 흩어진 UX 조직 통합으로 30여 지자체 운영</div>
+        <div class="kpi">지자체 <b>30+</b> · 조직 <b>20+</b></div>
       </div>
-      <div class="cbar"><div class="t">진단 모델은 이용률로 판단하면 안 됩니다. <b>민감도·특이도</b>로 봐야 하고, 되돌리기 어려운 결정은 현업이 제 판단을 막을 수 있게 먼저 정해둡니다.</div></div>
+      <div class="dmrow">
+        <div class="dom">장기요양·돌봄<span>THK · 복지용구</span></div>
+        <div class="mid">복지용구 유통과 재가 돌봄, B2B·B2C 플랫폼을 동시에 구축</div>
+        <div class="kpi">이용률 <b>30%</b> · 직배 <b>2h↓</b></div>
+      </div>
+      <div class="dmrow">
+        <div class="dom">결제·병원원무<span>더베스트페이 · 원무</span></div>
+        <div class="mid">EMR 연동 원무를 서비스화하고, 신규 결제 서비스 2종을 구축</div>
+        <div class="kpi">신규 서비스 <b>2종</b></div>
+      </div>
     </div>
+    <div class="content-caption">낯선 규제 도메인에 <b>네 번</b> 들어가, 매번 같은 순서로 성과를 냈습니다. <b>헬스케어가 다섯 번째</b>입니다.</div>
   </div>
-</section>
+  <footer class="slide-footer">
+    <div class="source"></div><div class="page-number">03 / 08</div>
+  </footer>
+</section></div>
 
-<!-- ▼ [7] 합류 후 일하는 순서 · 투자-회수 · 규제 -->
-<section class="slide">
-  <div class="band">
-    <div class="duo"><img src="assets/img/plan.jpg" alt="진단 · 검증 계획"></div>
-    <div class="bcap"><span class="sec">합류 후 일하는 순서</span><span class="pg">07</span></div>
-    <div class="bhead">만들기 전에, 무엇이 문제인지부터 <span class="cy">확인</span>하겠습니다</div>
-  </div>
-  <div class="bbody">
-    <div class="cap" style="margin-bottom:16px">먼저 진단하고, 작은 파일럿으로 확인한 다음, 되는 것만 자산으로 남깁니다. 진단 단계에서 하는 일은 이렇습니다.</div>
-    <div class="hflow">
-      <div class="hstep"><div class="hn">해독</div><div class="hs">이해관계자 · 용어</div></div>
-      <div class="harr">›</div>
-      <div class="hstep"><div class="hn">파악</div><div class="hs">데이터 · 규제 지형</div></div>
-      <div class="harr">›</div>
-      <div class="hstep"><div class="hn">가설</div><div class="hs">병목이 어디인지</div></div>
-      <div class="harr">›</div>
-      <div class="hstep"><div class="hn">계획</div><div class="hs">우선순위 · 검증 계획</div></div>
+<!-- ============ 04 HEALTHCARE PROOF ============ -->
+<div class="stage"><section class="slide">
+  <div class="wm">DAI · 정치성</div>
+  <header class="slide-header">
+    <div class="eyebrow">HEALTHCARE PROOF</div>
+    <h1>보험의 데이터, 돌봄의 프로세스, 병원의 연동 —<br><span class="em">이미 제품으로 다뤄봤습니다.</span></h1>
+  </header>
+  <div class="slide-content">
+    <div class="hc-track">
+      <div class="hc-line"><div class="fill"></div></div>
+      <div class="hc-cols">
+        <div class="hc-col">
+          <div class="hc-node"></div>
+          <div class="hc-stage">01 · 보험</div>
+          <div class="hc-title">인슈어테크</div>
+          <div class="hc-meta">굿리치 · 5년+ · 최장 앵커</div>
+          <div class="hc-desc">보험 마이데이터(본인신용정보 전송요구·동의 흐름)와 보험금 청구를 설계. 개인 건강·의료 데이터를 다루는 <b>고규제 흐름</b>을 실제로.</div>
+          <div class="hc-metric">
+            <div class="m"><div class="mv">200만</div><div class="ml">앱 가입</div></div>
+            <div class="m"><div class="mv">월 6천</div><div class="ml">DB(리드)</div></div>
+          </div>
+        </div>
+        <div class="hc-col">
+          <div class="hc-node"></div>
+          <div class="hc-stage">02 · 돌봄</div>
+          <div class="hc-title">장기요양</div>
+          <div class="hc-meta">THK 이로움케어 · 2년+</div>
+          <div class="hc-desc">복지용구 유통과 재가 돌봄을 잇고, 수급자격·급여 프로세스를 제품화. <b>B2B·B2C를 동시에</b> 구축한 경험.</div>
+          <div class="hc-metric">
+            <div class="m"><div class="mv">30%</div><div class="ml">이용률</div></div>
+            <div class="m"><div class="mv">2h↓</div><div class="ml">직배 리드타임</div></div>
+          </div>
+        </div>
+        <div class="hc-col">
+          <div class="hc-node"></div>
+          <div class="hc-stage">03 · 병원</div>
+          <div class="hc-title">병원 원무</div>
+          <div class="hc-meta">더베스트페이 · 내손안에키오스크</div>
+          <div class="hc-desc">병원 EMR과 연동해 예약·수납·실손청구·처방을 모바일로. 원무를 <b>환자가 쓰는 서비스로 고도화</b>. 개인정보보호책임자(CPO)로 규제 대응.</div>
+          <div class="hc-metric">
+            <div class="m"><div class="mv">EMR</div><div class="ml">연동 원무</div></div>
+            <div class="m"><div class="mv">모바일</div><div class="ml">서비스화</div></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="cbar"><span class="tag">투자·회수</span><div class="t">첫 파일럿은 있는 자산을 최대한 재사용해 적은 인원으로 작게 시작합니다. 유료계약이나 반복매출이 나오는지 보고, 안 되면 미리 정해둔 기준에서 멈춥니다.</div></div>
-    <div class="badges">
-      <span class="badge">SaMD</span><span class="badge">개인정보보호</span><span class="badge">마이데이터</span><span class="badge">리베이트 쌍벌제</span><span class="badge">환자 유인·의료광고</span>
+    <div class="honest">임상 EMR·SaMD를 제가 직접 만들진 않습니다. 대신 모델의 민감도·특이도를 <b>임상 GO/NO-GO 기준</b>으로 읽고, SaMD 등급·전송요구권·개인정보 규제를 <b>제품 로드맵의 제약</b>으로 다뤄 임상·AI 전문가와 함께 배선합니다.</div>
+  </div>
+  <footer class="slide-footer">
+    <div class="source">보험 → 돌봄 → 병원, 헬스케어 밸류체인의 세 지점을 실제 제품으로 경험</div><div class="page-number">04 / 08</div>
+  </footer>
+</section></div>
+
+<!-- ============ 05 LEADERSHIP ============ -->
+<div class="stage"><section class="slide">
+  <div class="wm">DAI · 정치성</div>
+  <header class="slide-header">
+    <div class="eyebrow">LEADERSHIP &amp; EXECUTION</div>
+    <h1>서로 다른 언어를 쓰는 조직을,<br><span class="em">하나의 제품 목표</span><span class="lite">로 정렬합니다.</span></h1>
+  </header>
+  <div class="slide-content">
+    <div class="lead-wrap">
+      <div class="lead-hub">
+        <svg viewBox="0 0 720 420" width="100%" style="display:block">
+          <defs>
+            <marker id="mk" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+              <circle cx="3.5" cy="3.5" r="3.5" fill="#1391b8"/>
+            </marker>
+          </defs>
+          <!-- spokes -->
+          <g stroke="#1391b8" stroke-width="1.8" marker-end="url(#mk)">
+            <line x1="360" y1="210" x2="150" y2="86"/>
+            <line x1="360" y1="210" x2="150" y2="334"/>
+            <line x1="360" y1="210" x2="570" y2="86"/>
+            <line x1="360" y1="210" x2="570" y2="334"/>
+            <line x1="360" y1="210" x2="360" y2="52"/>
+          </g>
+          <!-- outer nodes -->
+          <g font-family="Pretendard" font-weight="700" font-size="19" fill="#171a2e" text-anchor="middle">
+            <g><rect x="66" y="56" width="150" height="56" rx="8" fill="#f5f7fb" stroke="#e5e8f0"/><text x="141" y="91">개발</text></g>
+            <g><rect x="66" y="304" width="150" height="56" rx="8" fill="#f5f7fb" stroke="#e5e8f0"/><text x="141" y="339">디자인</text></g>
+            <g><rect x="504" y="56" width="150" height="56" rx="8" fill="#f5f7fb" stroke="#e5e8f0"/><text x="579" y="91">사업</text></g>
+            <g><rect x="504" y="304" width="150" height="56" rx="8" fill="#f5f7fb" stroke="#e5e8f0"/><text x="579" y="339">현업</text></g>
+            <g><rect x="276" y="22" width="168" height="56" rx="8" fill="#f5f7fb" stroke="#e5e8f0"/><text x="360" y="57">외부 파트너</text></g>
+          </g>
+          <!-- hub -->
+          <circle cx="360" cy="210" r="72" fill="#141a33"/>
+          <text x="360" y="203" text-anchor="middle" font-family="Pretendard" font-weight="800" font-size="22" fill="#fff">PM</text>
+          <text x="360" y="231" text-anchor="middle" font-family="Pretendard" font-weight="600" font-size="15" fill="#5fd0ee">제품 오너</text>
+        </svg>
+      </div>
+      <div class="lead-proof">
+        <div class="pf">
+          <div class="pt">조직을 통합해 본 사람</div>
+          <div class="pd">코나아이에서 흩어진 UX 조직 <b>약 20명</b>을 하나로 통합, 30여 지자체 지역화폐를 함께 운영.</div>
+        </div>
+        <div class="pf">
+          <div class="pt">프로세스를 재설계하는 사람</div>
+          <div class="pd">디자인 생산 방식을 <b>포토샵 6명 → 피그마 3명</b> 체계로 전환, 산출물을 표준화.</div>
+        </div>
+        <div class="pf">
+          <div class="pt">개발이 헛돌지 않게 앞단을 정리하는 사람</div>
+          <div class="pd">AI로 <b>실행 가능한 프로토타입</b>을 만들어 요구사항을 명확히 하고, 개발팀의 재작업과 스펙 오해를 줄입니다.</div>
+        </div>
+      </div>
     </div>
+    <div class="content-caption">개인 기획자가 아니라, <b>서로 다른 조직을 움직여 하나의 제품</b>을 만들어 본 사람입니다.</div>
   </div>
-</section>
+  <footer class="slide-footer">
+    <div class="source"></div><div class="page-number">05 / 08</div>
+  </footer>
+</section></div>
 
-<!-- ▼ [8] 클로징 -->
-<section class="slide hero">
-  <div class="duo"><img src="assets/img/closing.jpg" alt="일출 · 길"></div>
-  <div class="scrim close"></div>
-  <div class="inner">
-    <div class="close-lead">마지막으로 드리고 싶은 말씀</div>
-    <div class="close-t">낯선 분야에서 플랫폼을 만드는 일,<br>이번이 <span class="cy">다섯 번째</span>입니다. 이번엔 <span class="cy">끝까지 해보고 싶습니다.</span></div>
-    <div class="close-sub">그동안은 끝까지 키워볼 판이 없었습니다. 자본과 임상, 유통이 받쳐주는 건 이번이 처음입니다.</div>
-    <div class="close-hook"><div class="t">합류하면 먼저 <em>무엇을 모르는지부터</em> 정리하겠습니다. 진단 단계를 마치면, 그 결과를 근거로 다시 보고드리겠습니다.</div></div>
+<!-- ============ 06 WHY DAI ============ -->
+<div class="stage"><section class="slide">
+  <div class="wm">DAI · 정치성</div>
+  <header class="slide-header">
+    <div class="eyebrow">WHY DAI</div>
+    <h1>자산은 모였습니다. 아직 <span class="em">‘환자가 쓰는 하나의 경험’</span><span class="lite">으로<br>이어지지 않았을 뿐 — 그 연결이 제 일입니다.</span></h1>
+  </header>
+  <div class="slide-content">
+    <div class="dai-wrap">
+      <div class="dai-col left">
+        <div class="ct">그룹이 이미 연결한 채널 · 자산</div>
+        <div class="asset">
+          <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.7"/><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12Z" stroke="currentColor" stroke-width="1.7"/></svg></div>
+          <div class="txt"><div class="at">진단 · 닥터눈</div><div class="ad">메디웨일 안저 AI, 동아ST 유통</div></div>
+        </div>
+        <div class="asset">
+          <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M2 12h5l2-5 4 10 2-5h7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="txt"><div class="at">모니터링 · 하이카디</div><div class="ad">메쥬 심전도 패치 · 동아ST 국내 유통</div></div>
+        </div>
+        <div class="asset">
+          <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3s6 6.5 6 11a6 6 0 1 1-12 0c0-4.5 6-11 6-11Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+          <div class="txt"><div class="at">관리 · 케어센스에어 CGM</div><div class="ad">아이센스 제조, 동아ST 판매</div></div>
+        </div>
+        <div class="asset">
+          <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M9 3h6M10 3v5l-5 9a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 17l-5-9V3" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+          <div class="txt"><div class="at">AIDDP · AI 신약개발 플랫폼</div><div class="ad">동아에스티 공동구축 · R&amp;D 트랙(환자 경험 밖)</div></div>
+        </div>
+        <div class="asset">
+          <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+          <div class="txt"><div class="at">규제 변화 — 기회이자 변수</div><div class="ad">디지털의료제품법·전송요구권 · 비대면진료(2026.12 시행예정)</div></div>
+        </div>
+        <div class="asset">
+          <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+          <div class="txt"><div class="at">그룹 캡티브 기반</div><div class="ad">출발점이자, 캡티브 밖으로 넓혀야 할 무대</div></div>
+        </div>
+      </div>
+      <div class="dai-gate">
+        <svg width="52" height="140" viewBox="0 0 52 140" fill="none">
+          <path d="M6 30h30M6 70h30M6 110h30" stroke="#c9cedd" stroke-width="2" stroke-linecap="round"/>
+          <path d="M30 30C44 30 44 70 30 70M30 70C44 70 44 110 30 110" stroke="#1391b8" stroke-width="2" fill="none"/>
+          <path d="M40 62l8 8-8 8" stroke="#1391b8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="30" y1="70" x2="46" y2="70" stroke="#1391b8" stroke-width="2"/>
+        </svg>
+      </div>
+      <div class="dai-col right">
+        <div class="dai-role">
+          <div class="rk">그래서, 저의 역할</div>
+          <div class="rt">흩어진 <em>진단·모니터링·관리</em>를 환자가 쓰는 <em>하나의 경험</em>으로 잇는 제품 레이어</div>
+          <div class="rd">표준 기반 데이터 상호운용, 환자 동의·의료정보 보안, 신뢰 가능한 연동 — 결코 쉬운 일이 아닙니다. 이 제품 레이어의 <em>채택률·재사용·외부 매출 기여</em>를 제가 책임집니다.</div>
+        </div>
+      </div>
+    </div>
+    <div class="respect"><b>존중 계약 —</b> 임상·수가·AI 모델은 여러분의 자산입니다. 제 일은 그 자산을 잇는 제품을 <b>캡티브 안에서 증명해 밖으로 확장</b>하는 것입니다.</div>
   </div>
-  <div class="close-sign">동아쏘시오 · DAI AI 헬스케어 플랫폼 팀장 지원 · 정치성</div>
-</section>
+  <footer class="slide-footer">
+    <div class="source">출처 · DAI 사명변경(2026.7.16) · AIDDP 가동(2026.7, 동아에스티 공동) · 동아ST 디지털헬스 유통 파트너십(하이카디·닥터눈·케어센스) · 비대면진료 2026.12 시행예정 — 공개 언론보도 2025–2026</div>
+    <div class="page-number">06 / 08</div>
+  </footer>
+</section></div>
 
-<img id="wm" src="assets/dai-logo-navy.png" alt="">
-</div></div>
-<div id="bar"></div>
+<!-- ============ 07 FIRST 90 DAYS ============ -->
+<div class="stage"><section class="slide">
+  <div class="wm">DAI · 정치성</div>
+  <header class="slide-header">
+    <div class="eyebrow">FIRST 90 DAYS</div>
+    <h1>헬스케어의 실패는 비용이 아니라 <span class="em">환자 안전</span>입니다.<br><span class="lite">그래서 먼저 ‘이해’하고, 90일 안에 하나를 증명합니다.</span></h1>
+  </header>
+  <div class="slide-content">
+    <div class="days">
+      <div class="day">
+        <div class="no">01</div>
+        <div class="st">UNDERSTAND</div>
+        <div class="dt">진단</div>
+        <div class="dtk">무엇을 모르는지부터</div>
+        <ul>
+          <li>첫 산출물은 제품이 아니라 <b>‘내가 모르는 것의 지도 + 아는 사람 매핑’</b></li>
+          <li>디지털헬스 자산 인벤토리와, <b>임상 안전·유효성 근거·검증 책임 소재</b>부터 매핑</li>
+        </ul>
+      </div>
+      <div class="day">
+        <div class="no">02</div>
+        <div class="st">PRIORITIZE</div>
+        <div class="dt">선별</div>
+        <div class="dtk">되돌릴 수 없는 결정엔 검증을</div>
+        <ul>
+          <li>임팩트 × 실현성으로 <b>lighthouse 한 개</b>를 고름</li>
+          <li>속도가 아니라, 검증 상수를 먼저 정의</li>
+        </ul>
+      </div>
+      <div class="day">
+        <div class="no">03</div>
+        <div class="st">PROVE</div>
+        <div class="dt">증명</div>
+        <div class="dtk">작동하는 얇은 진짜로</div>
+        <ul>
+          <li>얇은 <b>수직 슬라이스</b>를 실제 사용자 경험으로 구현</li>
+          <li>사용·금액과 <b>안전·임상 검증 통과</b>를 다음 투자의 게이트로</li>
+        </ul>
+      </div>
+    </div>
+    <div class="content-caption">속도로 증명하지 않습니다. 90일 안에 <b>제가 책임질 단일 지표 하나</b>를 정하고, 되돌릴 수 있는 작은 진짜로 증명합니다.</div>
+  </div>
+  <footer class="slide-footer">
+    <div class="source">Understand → Prioritize → Prove · 90일 내 lighthouse 1개의 얇은 수직 슬라이스 실증</div><div class="page-number">07 / 08</div>
+  </footer>
+</section></div>
+
+<!-- ============ 08 CLOSING ============ -->
+<div class="stage"><section class="slide slide-closing">
+  <div class="cover-brand"><span class="dot"></span>동아쏘시오그룹 · DAI &nbsp;|&nbsp; AI 헬스케어 플랫폼 팀장</div>
+  <div class="close-main">
+    <div class="eyebrow" style="margin-bottom:44px">CLOSING</div>
+    <div class="transitions">
+      <div class="tr">
+        <div class="from">전략을</div>
+        <div class="arw"><svg width="30" height="20" viewBox="0 0 30 20" fill="none"><path d="M2 10h24M20 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="to">실행으로</div>
+      </div>
+      <div class="tr">
+        <div class="from">기술을</div>
+        <div class="arw"><svg width="30" height="20" viewBox="0 0 30 20" fill="none"><path d="M2 10h24M20 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="to">제품으로</div>
+      </div>
+      <div class="tr">
+        <div class="from">제품을</div>
+        <div class="arw"><svg width="30" height="20" viewBox="0 0 30 20" fill="none"><path d="M2 10h24M20 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="to">사업 임팩트로</div>
+      </div>
+    </div>
+    <div class="close-line">복잡한 헬스케어를 구조화하고, AI·기술·현업을 연결해<br><span class="em">실제 제품과 사업 임팩트</span>로 만드는 팀장.</div>
+  </div>
+  <div class="cover-foot">
+    <span>정치성 · DAI AI 헬스케어 플랫폼 팀장 지원</span>
+    <span class="page-number">08 / 08</span>
+  </div>
+</section></div>
+
+</div>
+
 <script>
-const slides=[...document.querySelectorAll('.slide')];let i=0;
-const fit=document.getElementById('fit');
-function scale(){const s=Math.min(innerWidth/1280,innerHeight/720);fit.style.transform=`translate(-50%,-50%) scale(${s})`;}
-function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,k)=>s.classList.toggle('on',k===i));
-  document.getElementById('bar').style.width=((i+1)/slides.length*100)+'%';
-  const dark=slides[i].classList.contains('hero')||slides[i].classList.contains('results');
-  document.getElementById('wm').style.display=dark?'none':'block';}
-addEventListener('keydown',e=>{
-  if(['ArrowRight',' ','PageDown'].includes(e.key)){show(i+1);e.preventDefault();}
-  else if(['ArrowLeft','PageUp'].includes(e.key)){show(i-1);e.preventDefault();}
-  else if(e.key==='f'||e.key==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();}});
-addEventListener('click',e=>{if(e.target.closest('a'))return;show(i+(e.clientX>innerWidth/2?1:-1));});
-let x0=null;addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
-addEventListener('touchend',e=>{if(x0==null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50)show(i+(dx<0?1:-1));x0=null;});
-addEventListener('resize',scale);scale();show(0);
+  // 화면 전용: 뷰포트에 맞춰 슬라이드 축소(프린트/PDF는 원본 1600×900 유지)
+  (function(){
+    var only = new URLSearchParams(location.search).get('only');
+    if(only){
+      // QA 캡처 모드: 지정 슬라이드 하나만 1600×900 원본으로 노출
+      document.documentElement.style.setProperty('--s','1');
+      var deck=document.querySelector('.deck');
+      deck.style.padding='0'; deck.style.gap='0';
+      var stages=document.querySelectorAll('.stage');
+      stages.forEach(function(st,i){ st.style.display=(i===(+only-1))?'block':'none'; });
+      document.querySelectorAll('.slide').forEach(function(s){ s.style.boxShadow='none'; });
+      return;
+    }
+    function fit(){
+      var s = Math.min(1, (window.innerWidth - 48) / 1600);
+      document.documentElement.style.setProperty('--s', s.toFixed(4));
+    }
+    window.addEventListener('resize', fit);
+    fit();
+  })();
 </script>
+</body>
+</html>
